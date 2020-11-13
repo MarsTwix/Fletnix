@@ -5,4 +5,4 @@
 Logo is net als netflix maar dan een blauwe F. (being worked on...)
 
 **Doelgroep**: Kinderen<br/>
-**Genre**: animatie/tekenfil 
+**Genre**: animatie/tekenfilm
