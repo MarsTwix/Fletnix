@@ -8,14 +8,15 @@ h1{
 h2{
     font-family: Avenir Roman,sans-serif;
     color: white;
-    font-size: 48px;
+    font-size: 30px;
 }
 
 h3{
     font-family: Avenir Roman,sans-serif;
-    margin-top: -30px;
+    margin-top: -5px;
     color: white;
-    font-size: 24px;
+    font-weight: bold;
+    font-size: 42px;
 }
 
 nav a{
@@ -134,6 +135,30 @@ input{
 label{
     font-family: Avenir Roman,sans-serif;
     color: white;
+}
+
+<<<<<<< HEAD
+.films{
+
+    display: grid;
+    grid-template-columns:  9% 9% 9% 9% 9% 9% 9% 9% 9% 9% 9%;
+    background-color: rgb(0, 0, 0);
+
+}
+.films img:hover {
+    opacity: .5;
+}
+
+
+.films2{
+
+    display: grid;
+    grid-template-columns:  9% 9% 9% 9% 9% 9% 9% 9% 9% 9% 9%;
+    background-color: rgb(0, 0, 0);
+
+}
+.films2 img:hover {
+    opacity: .5;
 }
 
 select{
