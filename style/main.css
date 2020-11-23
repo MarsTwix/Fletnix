@@ -9,6 +9,7 @@ h2{
     font-family: Avenir Roman,sans-serif;
     color: white;
     font-size: 30px;
+
 }
 
 h3{
@@ -16,8 +17,17 @@ h3{
     margin-top: -5px;
     color: white;
     font-weight: bold;
-    font-size: 42px;
+    font-size: 30px;
 }
+h4{
+    font-family: Avenir Roman,sans-serif;
+    margin-top: -5px;
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+
+}
+
 
 nav a{
     color: white;
@@ -137,7 +147,6 @@ label{
     color: white;
 }
 
-<<<<<<< HEAD
 .films{
 
     display: grid;
@@ -175,3 +184,11 @@ select{
     position: absolute;
     margin: 30px;
 }
+.lego_movie{
+text-align: center;
+}
+.lego_movie img:hover {
+opacity: .5;
+
+}
+
