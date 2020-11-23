@@ -145,3 +145,8 @@ select{
     border-style: none;
     color: white;
 }
+
+.logo{
+    position: absolute;
+    margin: 30px;
+}
