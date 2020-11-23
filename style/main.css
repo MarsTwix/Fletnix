@@ -121,11 +121,27 @@ input{
 }
 
 .abonnement  input{
+    margin-top: -20px;
     text-align: left;
     display:inline;
 }
 
+#login{
+    display: flex;
+    justify-content: center;
+}
+
 label{
     font-family: Avenir Roman,sans-serif;
+    color: white;
+}
+
+select{
+    margin: 20px;
+    font-family: Avenir Roman,sans-serif;
+    padding: 20px;
+    background-color:rgb(41, 41, 41);
+    border-radius: 4px;
+    border-style: none;
     color: white;
 }
