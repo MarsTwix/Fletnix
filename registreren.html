@@ -19,12 +19,12 @@
     <main id="registreren" style="background-color: rgba(0, 0, 0, 0.5);">
         <h2 class="center-text">Registreren</h2>
         <div>
-            <input placeholder="Voornaam">
-            <input placeholder="tussenv.">
-            <input placeholder="Achternaam">
+            <input type="text" placeholder="Voornaam">
+            <input type="text" placeholder="tussenv.">
+            <input type="text" placeholder="Achternaam">
         </div>
         <div>
-            <input placeholder="Geboortedatum">
+            <input type="date" placeholder="Geboortedatum">
         </div>
         <div>
             <input placeholder="Woonplaats">
@@ -32,12 +32,21 @@
             <input placeholder="Huisnummer">
         </div>
         <div>
-            <input placeholder="Telefoonnummer">
-            <input placeholder="E-mail">
+            <input type="tel" placeholder="Telefoonnummer">
+            <input ttype="E-mail" placeholder="E-mail">
         </div>
         <div>
             <input type="password" placeholder="Wachtwoord">
             <input type="password" placeholder="Wachtwoord herhalen">
+        </div>
+        <div class="abonnement">
+            <h3>Abonnement:</h3>
+            <input type="radio" id="regular" name="abonnement" >
+            <label for="regular">Regular</label>
+            <input type="radio" id="premium" name="abonnement" value="female">
+            <label for="premium">Premium</label>
+            <input type="radio" id="ultra" name="abonnement" value="other">
+            <label for="ultra">Ultra</label>
         </div>
         <a id="buttonlink" class="center-text" href="filmoverzicht.html">Registreren</a>
 
