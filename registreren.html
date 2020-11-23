@@ -4,45 +4,45 @@
 
 <head>
     <title>Registratie</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/main.css">
 
 </head>
 
-<form id="Registreren" method="GET" action="registreren.html" >
-    <label><b>Voornaam    
-    </b>    
-    </label>    
-    <input placeholder="Voornaam">        
-    <label><b>Achternaam   
-    </b>    
-    </label>    
-    <input placeholder="Achternaam">    
-    <br><br> 
-    <label><b>E-mail</b></label>
-    <input  placeholder="E-mail">
-    <br><br>
-    <label><b>Telefoon nummer</b></label>
-    <input  placeholder="Telefoon nummer">
-    <br><br>
-    <label><b>Woonplaats</b></label>
-    <input  placeholder="Woonplaats">
-    <label><b>Straat</b></label>
-    <input  placeholder="Straat">
-    <label><b>Nmr</b></label>
-    <input  placeholder="Huisnummer">
-    <br><br>
-    <label><b>Wachtwoord</b></label>
-    <input type="password" placeholder="Wachtwoord">
-    <br><br> 
-    <label><b>Wachtwoord herhalen</b></label>
-    <input type="password" placeholder="Wachtwoord herhalen">
-    <br><br>
-    <input type="button" value="Log in">       
-    <br><br>    
+<body style="background-color:black;">
 
+    <div id="background">
+        <img src="img/test.jpg" style="opacity: 0.25;" width="100%">
+    </div>
+    <header style="clear: both;"></header>
 
+    <main id="registreren" style="background-color: rgba(0, 0, 0, 0.5);">
+        <h2 class="center-text">Registreren</h2>
+        <div>
+            <input placeholder="Voornaam">
+            <input placeholder="tussenv.">
+            <input placeholder="Achternaam">
+        </div>
+        <div>
+            <input placeholder="Geboortedatum">
+        </div>
+        <div>
+            <input placeholder="Woonplaats">
+            <input placeholder="Postcode">
+            <input placeholder="Huisnummer">
+        </div>
+        <div>
+            <input placeholder="Telefoonnummer">
+            <input placeholder="E-mail">
+        </div>
+        <div>
+            <input type="password" placeholder="Wachtwoord">
+            <input type="password" placeholder="Wachtwoord herhalen">
+        </div>
+        <a id="buttonlink" class="center-text" href="filmoverzicht.html">Registreren</a>
 
-</form>
+    </main>
 
+</body>
 
 </html>
