@@ -242,20 +242,21 @@ opacity: .5;
 .tekst{
     margin-top: 35px;
     color: rgb(255, 255, 255);
-    font-family: Avenir Roman,sans-serif;
-    font-size: 64px;
+    
+    font-size: 14px;
 }
 
 .filmtekst{
-text-align: left;
-color: white;
-font-size: 15px;
-margin-top: -20%;
+    font-family: Avenir Roman,sans-serif;
+    text-align: left;
+    color: white;
+    font-size: 15px;
+    margin-top: -20%;
 margin-left: 400px;
 }
 
 .fotos{
-float: right;
-position: relative;
+    float: right;
+    position: relative;
 
 }
