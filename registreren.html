@@ -19,12 +19,12 @@
 
     <main id="registreren" style="background-color: rgba(0, 0, 0, 0.5);">
         <h2 class="center-text">Registreren</h2>
-        <div>
+        <div style = "text-align: center;">
             <input type="text" placeholder="Voornaam">
             <input type="text" placeholder="tussenv.">
             <input type="text" placeholder="Achternaam">
         </div>
-        <div>
+        <div style = "text-align: center;">
             <select name="countryCode" id="">
                 <option data-countryCode="DZ" value="213">Algeria (+213)</option>
                 <option data-countryCode="AD" value="376">Andorra (+376)</option>
@@ -244,30 +244,33 @@
             </select>
             <input placeholder="Woonplaats">
         </div>
-        <div>
+        <div style = "text-align: center;">
             <input placeholder="Postcode">
             <input placeholder="Huisnummer">
         </div>
-        <div>
+        <div style = "text-align: center;">
             <input type="date" placeholder="Geboortedatum">
             <input ttype="E-mail" placeholder="E-mail">
             <input type="tel" placeholder="Telefoonnummer">
         </div>
-        <div>
+        <div style = "text-align: center;">
             <input type="password" placeholder="Wachtwoord">
             <input type="password" placeholder="Wachtwoord herhalen">
         </div>
-        <div class="abonnement">
+        <div class="abonnementLink" style = "text-align: center;">
             <h3><a href="abonnementen.html">Abonnementen:</a></h3>
-            <input type="radio" id="regular" name="abonnement">
-            <label for="regular">Regular</label>
+            <input type="radio" id="basic" name="abonnement">
+            <label for="regular">Basic € 7,99</label>
+            <input type="radio" id="standaard" name="abonnement" value="other">
+            <label for="ultra">Standaard € 10,99</label>
             <input type="radio" id="premium" name="abonnement" value="female">
-            <label for="premium">Premium</label>
-            <input type="radio" id="ultra" name="abonnement" value="other">
-            <label for="ultra">Ultra</label>
+            <label for="premium">Premium € 13,99</label>
         </div>
-        <a id="login" href="Login.html" style="margin-bottom: 20px;">Al account? Hier kan je inloggen!</a>
-        <a id="buttonlink" class="center-text" href="filmoverzicht.html">Registreren</a>
+        <a id="login" href="Login.html" style="margin-bottom: 20px;">Al een account? Hier kan je inloggen!</a>
+        <div class="center-text">
+            <a id="buttonlink"  href="filmoverzicht.html">Registreren</a>
+        </div>
+        
 
     </main>
 

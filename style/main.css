@@ -61,7 +61,6 @@ header{
 }
 
 div{
-    text-align: center;
     font-weight: bold;
 }
 
@@ -127,11 +126,11 @@ input{
     margin-left: auto;
     margin-right: auto;
 }
-.abonnement{
+.abonnementLink{
     margin-top: 20px;
 }
 
-.abonnement  input{
+.abonnementLink  input{
     margin-top: -20px;
     text-align: left;
     display:inline;
@@ -149,24 +148,13 @@ label{
 
 .films{
 
-    display: grid;
-    grid-template-columns:  9% 9% 9% 9% 9% 9% 9% 9% 9% 9% 9%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     background-color: rgb(0, 0, 0);
 
 }
 .films img:hover {
-    opacity: .5;
-}
-
-
-.films2{
-
-    display: grid;
-    grid-template-columns:  9% 9% 9% 9% 9% 9% 9% 9% 9% 9% 9%;
-    background-color: rgb(0, 0, 0);
-
-}
-.films2 img:hover {
     opacity: .5;
 }
 
@@ -189,6 +177,18 @@ text-align: center;
 }
 .lego_movie img:hover {
 opacity: .5;
-
 }
 
+.abonnementen{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.abonnement h2{
+    color: rgb(0, 128, 255);;
+}
+
+.abonnement h3{
+    color: rgb(0, 78, 155);;
+}
