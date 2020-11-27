@@ -84,10 +84,13 @@ div{
 
 #homebtn{
     margin-left: 50px;
-    margin-right: auto;
 }
 
 #overonsbtn{
+    margin-left: 50px;
+}
+
+#previewbtn{
     margin-left: 50px;
     margin-right: auto;
 }
