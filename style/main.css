@@ -3,6 +3,7 @@ h1{
     font-family: Avenir Roman,sans-serif;
     color: rgb(0, 128, 255);
     font-size: 64px;
+    margin-left: 100px;
 }
 
 h2{
@@ -264,9 +265,20 @@ margin-left: 400px;
 
 }
 
+.accountknop{
+text-align: right;
+margin-right: -10%;
+}
+
 .account{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.filteren{
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
