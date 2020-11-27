@@ -3,6 +3,7 @@ h1{
     font-family: Avenir Roman,sans-serif;
     color: rgb(0, 128, 255);
     font-size: 64px;
+    margin-left: 100px;
 }
 
 h2{
@@ -262,4 +263,9 @@ margin-left: 400px;
     float: right;
     position: relative;
 
+}
+
+.accountknop{
+text-align: right;
+margin-right: -33%;
 }
