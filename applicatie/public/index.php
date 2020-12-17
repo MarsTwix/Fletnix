@@ -1,10 +1,12 @@
 <?php
+  print_r(PDO::getAvailableDrivers());
+
   // Naam van server
 $hostname = 'host.docker.internal';
 // Naam van database
-$dbname = 'studie';
+$dbname = 'FLETNIX_DOCENT';
 // Hier je eigen gebruikersnaam
-$username = 'Marstwix';
+$username = 'applicatie';
 // Hier je eigen password.
 // Zet het wachtwoord in het echt nooit letterlijk in de broncode.
 $pw = 'DatabaseFletnix';
@@ -36,3 +38,6 @@ foreach($users as $row) {
   print_r($row);
 }
 ?>
+
+
+
