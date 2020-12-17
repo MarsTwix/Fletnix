@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  max-width: 50%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.3rem;
+  justify-content: space-between;
+}

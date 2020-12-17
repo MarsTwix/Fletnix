@@ -1,0 +1,37 @@
+
+body {
+  font-family: Avenir Next, Avenir, Helvetica Neue, Calibri, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+header {
+  background: rgb(229, 0, 86);
+  width: 100%;
+  padding: 2em;
+  color: white;
+  box-shadow: 1px 1px 5px black;
+}
+
+h1 {
+  font-family: "Avenir Next Condensed", Roboto, sans-serif;
+}
+
+main {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 0 1em 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  padding: 1em;
+  color: #fff;
+}
