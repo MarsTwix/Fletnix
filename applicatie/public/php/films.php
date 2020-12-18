@@ -1,6 +1,19 @@
 <?php
   require_once 'db_connectie.php';
+
+
+
+function haalAlleFilmsOp() {
+  // Query doen
+  // Kan je `$dbh` zomaar gebruiken?
+
+}
+
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="nl">
   <head>
