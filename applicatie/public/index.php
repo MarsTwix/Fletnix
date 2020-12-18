@@ -1,6 +1,8 @@
 <?php
 require_once 'php/db_connectie.php';
 
+
+
 // Een query net zoals we dat wel vaker in SQL doen.
 $query = <<<EOD
 DROP TABLE IF EXISTS fletnix_user;
