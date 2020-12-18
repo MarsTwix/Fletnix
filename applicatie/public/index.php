@@ -1,8 +1,6 @@
 <?php
 require_once 'php/db_connectie.php';
 
-
-
 // Een query net zoals we dat wel vaker in SQL doen.
 $query = <<<EOD
 DROP TABLE IF EXISTS fletnix_user;
@@ -24,10 +22,17 @@ $users = $dbh->query('SELECT * from fletnix_user');
 foreach($users as $row) {
   print_r($row);
 }
-
-print_r ("Geen errors in php p
-       :)")
 ?>
 
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  <a href='films.php'>films.php</a> 
+  </body>
+</html>
 
 
