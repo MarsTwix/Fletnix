@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
   print_r(PDO::getAvailableDrivers());
 
   // Naam van server
@@ -15,6 +16,9 @@ $pw = '1234';
 $dbh = new PDO("sqlsrv:Server=$hostname;Database=$dbname;ConnectionPooling=0", $username, $pw);
 // Tijdens het ontwikkelen is het handig om meteen ook de foutmeldingen vanuit de database te kunnen lezen.
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+=======
+require_once php/db_connectie.php;
+>>>>>>> Stashed changes
 
 // Een query net zoals we dat wel vaker in SQL doen.
 $query = <<<EOD
