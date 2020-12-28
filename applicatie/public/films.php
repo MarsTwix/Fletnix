@@ -2,12 +2,18 @@
   require_once 'php/data_functions.php';
   require_once 'php/view_functions.php';
 
-  // Data ophalen
-  $films = haalAlleFilmsOp();
+  if(isset($_GET['titel'])){
+    $titel = $_GET['titel'];
+    $resultaten = zoekFilmsOpTitel($titel);
+  }
 
-  // HTML-broncode maken
-  $html = filmsNaarHTML($films);
+  if(empty($resultaten)){
+    $html = 'Geen resultaten';
+  }
 
+  else{
+    $html = filmsNaarHTMl($resultaten);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +24,14 @@
     <title>Alle films</title>
   </head>
   <body>
-
-    <h1>Overzicht van alle films</h1>
-    <?= $html ?>
+    <h1>Zoeken</h1>
+    <form method="GET" action="">
+      <div>
+        <label for="titel">Titel: </label>
+        <input type="text" name="titel" id="titel">
+      </div>
+      <input type="submit" value="Zoek">
+    </form>
+        <?=$html?>
   </body>
 </html>
