@@ -7,6 +7,7 @@ function filmsNaarHTMl($films) {
       $min = intval($film['duration']) - 60;
       $html .= "<h2>" . $film['title'] . "</h2>";
       $html .= "<p>Lengte: {$uur}:{$min} </p>";
+      $html .= "<img src={$film['cover_image']} height='180'>";
     }
     return $html;
 }
