@@ -21,46 +21,32 @@ function zoekFilmsOpTitel($titel) {
   return $query->fetchAll();
 }
 
-function checkMail($userMail) {
-  global $dbh;
-  
-  $userMail = "%{$userMail}%";
 
- 
-  $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address == $userMail";
-
-  $query = $dbh->prepare($sql);
-
-  $query->execute(array(":title" => $titel));
-
-
-  
- 
-
-
-
-
-}
-
-function checkPassword($username, $password) {
+function checkLogin($userMail, $password) {
 
   global $dbh;
-  
+
+  $returnwaarde = false;
+
   $userMail = "%{$userMail}%";
   $password = "%{$password}%";
  
-  $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address == $userMail";
+  $sql = "SELECT customer_mail_address, password  FROM Customer WHERE customer_mail_address == $userMail";
 
   $query = $dbh->prepare($sql);
 
   $query->execute(array(":title" => $titel));
 
-  $query->fetchAll()
+  $query->fetchAll();
 
+// If statement die checkt of database wachtwoord gelijk is aan $password
+// if() {
+// $returnwaarde = true;
+// } else {
+// $returnwaarde = false;
+// }
 
-if()
-
-
+return $returnwaarde;
 
 }
 
