@@ -20,4 +20,48 @@ function zoekFilmsOpTitel($titel) {
   // Heb je nog een andere FETCH type nodig? bijv PDO::FETCH_OBJ?
   return $query->fetchAll();
 }
+
+function checkMail($userMail) {
+  global $dbh;
+  
+  $userMail = "%{$userMail}%";
+
+ 
+  $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address == $userMail";
+
+  $query = $dbh->prepare($sql);
+
+  $query->execute(array(":title" => $titel));
+
+
+  
+ 
+
+
+
+
+}
+
+function checkPassword($username, $password) {
+
+  global $dbh;
+  
+  $userMail = "%{$userMail}%";
+  $password = "%{$password}%";
+ 
+  $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address == $userMail";
+
+  $query = $dbh->prepare($sql);
+
+  $query->execute(array(":title" => $titel));
+
+  $query->fetchAll()
+
+
+if()
+
+
+
+}
+
 ?>
