@@ -31,7 +31,7 @@ function checkLogin($userMail, $password) {
   $userMail = "%{$userMail}%";
   $password = "%{$password}%";
  
-  $sql = "SELECT customer_mail_address, password  FROM Customer WHERE customer_mail_address == $userMail";
+  $sql = "SELECT customer_mail_address, password  FROM Customer WHERE customer_mail_address = $userMail";
 
   $query = $dbh->prepare($sql);
 
