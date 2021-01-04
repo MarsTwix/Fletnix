@@ -28,8 +28,8 @@ function checkLogin($userMail, $password) {
 
   $returnwaarde = false;
 
-  $userMail = "%{$userMail}%";
-  $password = "%{$password}%";
+  $userMail = "$userMail";
+  $password = "$password";
  
   $sql = "SELECT customer_mail_address, password  FROM Customer WHERE customer_mail_address = $userMail";
 
