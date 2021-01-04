@@ -41,6 +41,7 @@ echo "<br> random code: {$randomString} <br>"
   </head>
   <body>
   <a href='homepage.html'>films.php</a> 
+  <a href='php/databaseUsersTest.php'>databaseUsersTest</a>
   </body>
 </html>
 
