@@ -47,7 +47,38 @@ function checkLogin($userMail, $password) {
 // }
 
 return $returnwaarde;
+}
 
+//zoekt of $input in $location staat
+function checkExistence($input, $location) {
+
+  global $dbh;
+
+  $returnwaarde = false;
+
+  $result;
+  $cel = "$input";
+  $grid = "$location";
+ 
+  $sql = "SELECT input  FROM grid";
+
+  $query = $dbh->prepare($sql);
+
+$query->bind_param($cel, $grid);
+
+  $query->execute();
+
+  $query->fetchAll();
+ 
+  $result = $query->fetchAll();
+
+  if(isset($result)){
+    return true;
+  } else {
+    return false;
+  }
+
+return null;
 }
 
 ?>
