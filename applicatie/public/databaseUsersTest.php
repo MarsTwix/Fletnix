@@ -22,6 +22,14 @@ $testresult = "Email & Wachtwoord succesvol ingevoerd.";
 $testresult = "Email & Wachtwoord niet ingevoerd.";
 };
 
+if(checkExistence("a.nuck@seddolor.com", "Customer")) {
+  echo "a.nuck in database.";
+} else {
+  echo "a.nuck niet in database.";
+}
+
+
+
 ?>
 
 
