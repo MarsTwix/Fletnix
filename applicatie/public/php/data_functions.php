@@ -1,5 +1,7 @@
 <?php
 require_once 'php/db_connectie.php';
+
+
   function haalAlleFilmsOp() {
     global $dbh;
     $films = $dbh->query("SELECT top(10) * FROM Movie");
@@ -50,35 +52,21 @@ return $returnwaarde;
 }
 
 //zoekt of $input in $location staat
-function checkExistence($input, $location) {
-
+function checkEmail($email) {
   global $dbh;
 
-  $returnwaarde = false;
+  unset($result);
+  $email = "%{$email}%";
 
-  $result;
-  $cel = "$input";
-  $grid = "$location";
- 
-  $sql = "SELECT input  FROM grid";
+  $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address = :email";
 
   $query = $dbh->prepare($sql);
 
-$query->bind_param($cel, $grid);
+  $query->execute(array(":email" => $email));
 
-  $query->execute();
+echo $query->fetchAll();
 
-  $query->fetchAll();
- 
-  $result = $query->fetchAll();
-
-  if(isset($result)){
-    return true;
-  } else {
-    return false;
-  }
-
-return null;
+  return $query->fetchAll();
 }
 
 ?>

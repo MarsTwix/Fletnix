@@ -1,11 +1,11 @@
 <?php
 require_once 'php/data_functions.php';
-
+require_once 'php/simple_functions.php';
 
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
 
-$email;
-$password;
+$email = "test@testmail.com";
+$password = "Test123";
 
 
 if(isset($_POST["email"])) {
@@ -22,11 +22,12 @@ $testresult = "Email & Wachtwoord succesvol ingevoerd.";
 $testresult = "Email & Wachtwoord niet ingevoerd.";
 };
 
-if(checkExistence("a.nuck@seddolor.com", "Customer")) {
-  echo "a.nuck in database.";
-} else {
-  echo "a.nuck niet in database.";
+if(compareEmail($email)) {
+  echo "Email aanwezig in de database."; 
+} elseif(!compareEmail($email)) {
+  echo "Email niet aanwezig in de database.";
 }
+
 
 
 
@@ -47,8 +48,6 @@ if(checkExistence("a.nuck@seddolor.com", "Customer")) {
 <body> 
 
 <h1>Test voor het vinden van users</h1>
-
-
 
 <h1>Login Test</h1>
 
