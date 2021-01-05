@@ -54,7 +54,12 @@ function checkEmail($email) {
 
   $query->execute(array(":email" => $email));
   $returnvalue = $query->fetchAll();
-  return $returnvalue[0]['customer_mail_address'];
+  if(empty($returnvalue)){
+    return null;
+  }
+  else{
+    return $returnvalue[0]['customer_mail_address'];
+  }
 }
 
 ?>

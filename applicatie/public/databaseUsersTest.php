@@ -4,16 +4,20 @@ require_once 'php/simple_functions.php';
 
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
 
-$email = '';
-$password = '';
-
 if(isset($_POST["email"])) {
   $email = $_POST["email"];
-};
+}
+
+else{
+  $email = '';
+}
 
 if(isset($_POST["password"])) {
   $password = $_POST["password"];
-};
+}
+else{
+  $password = '';
+}
 
 if(empty($email) || empty($password)) {
   $testresult = "Email & Wachtwoord niet ingevoerd.";
@@ -22,7 +26,9 @@ if(empty($email) || empty($password)) {
   $testresult = "Email & Wachtwoord succesvol ingevoerd.";
   if(compareEmail($email)) {
     echo "Email aanwezig in de database."; 
-  } else {
+  } 
+  
+  else {
     echo "Email niet aanwezig in de database.";
   }
 };
