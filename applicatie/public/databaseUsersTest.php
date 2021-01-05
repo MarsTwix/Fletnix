@@ -4,35 +4,28 @@ require_once 'php/simple_functions.php';
 
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
 
-$email = "test@testmail.com";
-$password = "Test123";
-
-
 if(isset($_POST["email"])) {
-$email = $_POST["email"];
+  $email = $_POST["email"];
 };
 
 if(isset($_POST["password"])) {
   $password = $_POST["password"];
-  };
+};
 
-if(isset($email) && isset($password)) {
-$testresult = "Email & Wachtwoord succesvol ingevoerd.";
+if(empty($email) || empty($password)) {
+  $testresult = "Email & Wachtwoord niet ingevoerd.";
+
 } else {
-$testresult = "Email & Wachtwoord niet ingevoerd.";
+  $testresult = "Email & Wachtwoord succesvol ingevoerd.";
 };
 
 if(compareEmail($email)) {
   echo "Email aanwezig in de database."; 
-} elseif(!compareEmail($email)) {
+} else {
   echo "Email niet aanwezig in de database.";
 }
 
-
-
-
 ?>
-
 
 <!DOCTYPE HTML>
 <html lang="nl">
@@ -60,12 +53,7 @@ Password <input type="password" name="password"><br>
 <p><?=$testresult?></p>
 <p>Ingevoerde email is: <?=$_POST["email"]?></p>
 <p>Ingevoerd wachtwoord is: <?=$_POST["password"]?></p>
-<p>Email test: <?=$email?></p>
-<p>Password test: <?=$password?></p>
 
 </body>
-
-
-
 
 </html>

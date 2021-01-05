@@ -30,8 +30,8 @@ function checkLogin($userMail, $password) {
 
   $returnwaarde = false;
 
-  $userMail = "$userMail";
-  $password = "$password";
+  $userMail = $userMail;
+  $password = $password;
  
   $sql = "SELECT customer_mail_address, password  FROM Customer WHERE customer_mail_address = $userMail";
 
@@ -41,13 +41,6 @@ function checkLogin($userMail, $password) {
 
   $query->fetchAll();
 
-// If statement die checkt of database wachtwoord gelijk is aan $password
-// if() {
-// $returnwaarde = true;
-// } else {
-// $returnwaarde = false;
-// }
-
 return $returnwaarde;
 }
 
@@ -55,18 +48,13 @@ return $returnwaarde;
 function checkEmail($email) {
   global $dbh;
 
-  unset($result);
-  $email = "%{$email}%";
-
   $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address = :email";
 
   $query = $dbh->prepare($sql);
 
   $query->execute(array(":email" => $email));
-
-echo $query->fetchAll();
-
-  return $query->fetchAll();
+  $returnvalue = $query->fetchAll();
+  return $returnvalue[0]['customer_mail_address'];
 }
 
 ?>
