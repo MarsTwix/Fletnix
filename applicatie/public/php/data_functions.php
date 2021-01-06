@@ -2,83 +2,96 @@
 require_once 'php/db_connectie.php';
 
 
-  function haalAlleFilmsOp() {
-    global $dbh;
-    $films = $dbh->query("SELECT top(10) * FROM Movie");
-    return $films->fetchAll();
+  function haalAlleFilmsOp()
+  {
+      global $dbh;
+      $films = $dbh->query("SELECT top(10) * FROM Movie");
+      return $films->fetchAll();
   }
 
-function zoekFilmsOpTitel($titel) {
-  global $dbh;
+function zoekFilmsOpTitel($titel)
+{
+    global $dbh;
   
-  $titel = "%{$titel}%";
+    $titel = "%{$titel}%";
 
-  // Schrijf hier je query zonder meteen al de data in de string te zetten met behulp van placeholders zoals `:titel`.
-  $sql = "SELECT TOP(10) * FROM Movie WHERE title like :title ORDER BY publication_year";
+    // Schrijf hier je query zonder meteen al de data in de string te zetten met behulp van placeholders zoals `:titel`.
+    $sql = "SELECT TOP(10) * FROM Movie WHERE title like :title ORDER BY publication_year";
 
-  $query = $dbh->prepare($sql);
+    $query = $dbh->prepare($sql);
 
-  $query->execute(array(":title" => $titel));
-  // Heb je nog een andere FETCH type nodig? bijv PDO::FETCH_OBJ?
-  return $query->fetchAll();
+    $query->execute(array(":title" => $titel));
+    // Heb je nog een andere FETCH type nodig? bijv PDO::FETCH_OBJ?
+    return $query->fetchAll();
 }
 
 
-function checkLogin($userMail, $password) {
+function checkLogin($userMail, $password)
+{
+    global $dbh;
 
-  global $dbh;
+    $returnwaarde = false;
 
-  $returnwaarde = false;
-
-  $userMail = $userMail;
-  $password = $password;
+    $userMail = $userMail;
+    $password = $password;
  
-  $sql = "SELECT customer_mail_address, password  FROM Customer WHERE customer_mail_address = $userMail";
+    $sql = "SELECT customer_mail_address, password  FROM Customer WHERE customer_mail_address = $userMail";
 
-  $query = $dbh->prepare($sql);
+    $query = $dbh->prepare($sql);
 
-  $query->execute(array(":title" => $titel));
+    $query->execute(array(":title" => $titel));
 
-  $query->fetchAll();
+    $query->fetchAll();
 
-return $returnwaarde;
+    return $returnwaarde;
 }
 
 //zoekt of $input in $location staat
-function checkEmail($email) {
-  global $dbh;
+function checkEmail($email)
+{
+    global $dbh;
 
-  $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address = :email";
+    $sql = "SELECT customer_mail_address FROM Customer WHERE customer_mail_address = :email";
 
-  $query = $dbh->prepare($sql);
+    $query = $dbh->prepare($sql);
 
-  $query->execute(array(":email" => $email));
-  $returnvalue = $query->fetchAll();
-  if(empty($returnvalue)){
-    return null;
-  }
-  else{
-    return $returnvalue[0]['customer_mail_address'];
-  }
+    $query->execute(array(":email" => $email));
+    $returnvalue = $query->fetchAll();
+    if (empty($returnvalue)) {
+        return null;
+    } else {
+        return $returnvalue[0]['customer_mail_address'];
+    }
 }
 
-function getPassword($email) {
-  global $dbh;
+function getPassword($email)
+{
+    global $dbh;
 
-  $sql = "SELECT password FROM Customer WHERE customer_mail_address = :email";
+    $sql = "SELECT password FROM Customer WHERE customer_mail_address = :email";
 
-  $query = $dbh->prepare($sql);
+    $query = $dbh->prepare($sql);
 
-  $query->execute(array(":email" => $email));
-  $returnvalue = $query->fetchAll();
-  if(empty($returnvalue)){
-    return null;
-  }
-  else{
-    return $returnvalue[0]['password'];
-  }
+    $query->execute(array(":email" => $email));
+    $returnvalue = $query->fetchAll();
+    if (empty($returnvalue)) {
+        return null;
+    } else {
+        return $returnvalue[0]['password'];
+    }
 }
 
+function addUser($NewEmail, $NewPassword)
+{
+    global $dbh;
 
+    $sql = "";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":email" => $email));
+
+    return null;
+}
 
 ?>
