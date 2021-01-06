@@ -4,25 +4,25 @@ require_once 'php/simple_functions.php';
 
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
 
-if (isset($_POST["email"])) {
-    $email = $_POST["email"];
+if (isset($_POST["Testemail"])) {
+    $Testemail = $_POST["Testemail"];
 } else {
-    $email = '';
+    $Testemail = '';
 }
 
-if (isset($_POST["password"])) {
-    $password = $_POST["password"];
+if (isset($_POST["Testpassword"])) {
+    $Testpassword = $_POST["Testpassword"];
 } else {
-    $password = '';
+    $Testpassword = '';
 }
 
-if (empty($email) || empty($password)) {
+if (empty($Testemail) || empty($Testpassword)) {
     $testresult = "Email & Wachtwoord niet ingevoerd.";
 } else {
     $testresult = "Email & Wachtwoord succesvol ingevoerd.";
-    if (compareEmail($email)) {
+    if (compareEmail($Testemail)) {
         echo "Email aanwezig in de database. ";
-        if (checkPassword($password, $email)) {
+        if (checkPassword($Testpassword, $Testemail)) {
             echo "Wachtwoord correct";
             header("Location: index.php");
         } else {
@@ -48,19 +48,20 @@ if (empty($email) || empty($password)) {
 
 <body> 
 
-<h1>Test voor het vinden van users</h1>
-
 <h1>Login Test</h1>
 
 <form action="databaseUsersTest.php" method="post">
-E-mail <input type="text" name="email"><br>
-Password <input type="password" name="password"><br>
+E-mail <input type="text" name="Testemail"><br>
+Password <input type="password" name="Testpassword"><br>
 <input type="submit">
 </form>
 
 <p><?=$testresult?></p>
-<p>Ingevoerde email is: <?=$email?></p>
-<p>Ingevoerd wachtwoord is: <?=$password?></p>
+<p>Ingevoerde email is: <?=$Testemail?></p>
+<p>Ingevoerd wachtwoord is: <?=$Testpassword?></p>
+
+<p>Werkend Email: a.nunc@seddolor.com</p>
+<p>Werkend PW bij Email: In</p>
 
 </body>
 
