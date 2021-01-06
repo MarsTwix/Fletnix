@@ -24,6 +24,7 @@ if (empty($email) || empty($password)) {
         echo "Email aanwezig in de database. ";
         if (checkPassword($password, $email)) {
             echo "Wachtwoord correct";
+            header("Location: index.php");
         } else {
             echo "Wachtwoord incorrect";
         }
