@@ -11,4 +11,17 @@ $Database = checkEmail($Data);
     return false;
 }
 
+function checkPassword($inputpassword, $email) {
+    $password = getPassword($email);
+    
+        if($password == $inputpassword) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+
 ?>

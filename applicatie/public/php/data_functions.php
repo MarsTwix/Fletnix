@@ -62,4 +62,23 @@ function checkEmail($email) {
   }
 }
 
+function getPassword($email) {
+  global $dbh;
+
+  $sql = "SELECT password FROM Customer WHERE customer_mail_address = :email";
+
+  $query = $dbh->prepare($sql);
+
+  $query->execute(array(":email" => $email));
+  $returnvalue = $query->fetchAll();
+  if(empty($returnvalue)){
+    return null;
+  }
+  else{
+    return $returnvalue[0]['password'];
+  }
+}
+
+
+
 ?>
