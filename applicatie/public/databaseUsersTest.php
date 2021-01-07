@@ -2,6 +2,8 @@
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
+session_start();
+
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
 
 if (isset($_POST["Testemail"])) {
@@ -24,7 +26,11 @@ if (empty($Testemail) || empty($Testpassword)) {
         echo "Email aanwezig in de database. ";
         if (checkPassword($Testpassword, $Testemail)) {
             echo "Wachtwoord correct";
-            header("Location: index.php");
+
+            $SESSION['email'] = $Testemail;
+            $SESSION['Login'] = true;
+
+        //header("Location: index.php");
         } else {
             echo "Wachtwoord incorrect";
         }
@@ -62,6 +68,8 @@ Password <input type="password" name="Testpassword"><br>
 
 <p>Werkend Email: a.nunc@seddolor.com</p>
 <p>Werkend PW bij Email: In</p>
+
+<p>Session email is: <?=$SESSION['email']?></p>
 
 </body>
 
