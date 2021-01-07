@@ -65,6 +65,7 @@ if (empty($Testemail) || empty($Testpassword)) {
 <form action="databaseUsersTest.php" method="post">
 E-mail <input type="text" name="Testemail"><br>
 Password <input type="password" name="Testpassword"><br>
+<input type="date"name="DatumChecker">DatumChecker</input><br>
 <input type="submit">
 </form>
 
