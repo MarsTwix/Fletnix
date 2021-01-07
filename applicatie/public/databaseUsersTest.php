@@ -2,7 +2,7 @@
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
-session_start();
+
 
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
 

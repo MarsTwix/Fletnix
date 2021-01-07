@@ -1,6 +1,7 @@
 <?php
 require_once 'php/db_connectie.php';
 
+session_start();
 
   function haalAlleFilmsOp()
   {
