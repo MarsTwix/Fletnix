@@ -21,6 +21,13 @@ function checkPassword($inputpassword, $email) {
     }
 
 
+function checkSubscriptionDate($endDate) {
+$currentDate = date("Y-m-d");
+$SubsribtEnd = date_create($endDate);
+
+$diff = date_diff($currentDate, $SubsribtEnd);
+
+}
 
 
 

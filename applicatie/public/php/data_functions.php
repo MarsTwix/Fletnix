@@ -82,6 +82,23 @@ function getPassword($email)
     }
 }
 
+function getSubscibDate($email)
+{
+    global $dbh;
+
+    $sql = "SELECT subscription_end FROM Customer WHERE customer_mail_address = :email";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":email" => $email));
+    $returnvalue = $query->fetchAll();
+    if (empty($returnvalue)) {
+        return null;
+    } else {
+        return $returnvalue[0]['subscription_end'];
+    }
+}
+
 function addUser($NewEmail, $NewPassword)
 {
     global $dbh;
