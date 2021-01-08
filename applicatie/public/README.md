@@ -19,7 +19,7 @@ $SESSION['EndDate'] : Bevat de datum waarop het abonnement afloopt. !Deze Waarde
 $SESSION['ValidDate'] : Bevat een boolean, als deze TRUE is heeft het account een geldig abonnement. Check datum is 1-1-2016.
 Als $SESSION['EndDate'] null is zal deze boolean automatisch true zijn.
 
-$SESSION[''] : 
+$SESSION['LoginError'] : Bevat string die uitlegd wat er fout ging bij het inloggen. 
 
 $SESSION[''] : 
 

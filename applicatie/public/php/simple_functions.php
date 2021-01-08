@@ -25,14 +25,23 @@ function checkPassword($inputpassword, $email)
 
 function checkSubscriptionDate($endDate)
 {
-    $currentDate = mktime(0, 0, 0, 1, 1, 2016);
-    $SubsribtEnd = date_create($endDate);
+    $currentTimeCode = mktime(0, 0, 0, 1, 1, 2016);
 
-    $diff = date_diff($currentDate, $SubsribtEnd);
+    $endDateArray = preg_split("/[-]/i", $endDate, 0, PREG_SPLIT_NO_EMPTY);
 
-    if ($diff >= 0) {
+    $endDay = (int) $endDateArray[2];
+    $endMonth = (int) $endDateArray[1];
+    $endYear = (int) $endDateArray[0];
+
+    $endTimeCode = mktime(0, 0, 0, $endDay, $endMonth, $endYear);
+
+    $TimeDifference = $endTimeCode - $currentTimeCode;
+
+    if ($TimeDifference >= 0) {
+        echo "Account actief";
         return true;
     } else {
+        echo "Account verlopen";
         return false;
     }
 }

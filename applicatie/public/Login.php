@@ -2,7 +2,7 @@
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
-$testresult = "Nog geen Email & Wachtwoord ingevoerd";
+session_start();
 
 if (isset($_POST["email"])) {
     $email = $_POST["email"];
@@ -17,21 +17,40 @@ if (isset($_POST["password"])) {
 }
 
 if (empty($email) || empty($password)) {
-    $testresult = "Email & Wachtwoord niet ingevoerd.";
+    $SESSION['LoginError'] = "Email & Wachtwoord niet ingevoerd. ";
 } else {
-    $testresult = "Email & Wachtwoord succesvol ingevoerd.";
     if (compareEmail($email)) {
-        echo "Email aanwezig in de database. ";
         if (checkPassword($password, $email)) {
-            echo "Wachtwoord correct";
-            header("Location: index.php");
+            $SubscriptionEndDate = getSubscibDate($email);
+
+            $SESSION['email'] = $email;
+            $SESSION['Login'] = true;
+            $SESSION['EndDate'] = getSubscibDate($email);
+
+            if (!empty($SESSION['EndDate'])) {
+                $SESSION['ValidDate'] = checkSubscriptionDate($SESSION['EndDate']);
+            } elseif (empty($SESSION['EndDate'])) {
+                $SESSION['ValidDate'] = true;
+            } else {
+                $SESSION['ValidDate'] = false;
+            }
+
+            //Doorsturen naar home pagina
+            //header("Location: index.php");
         } else {
-            echo "Wachtwoord incorrect";
+            $SESSION['LoginError'] = "Wachtwoord incorrect";
         }
     } else {
-        echo "Email niet aanwezig in de database.";
+        $SESSION['LoginError'] = "Email niet aanwezig in de database.";
     }
 };
+
+if(!empty($SESSION['LoginError'])) {
+    echo $SESSION['LoginError'];
+} else {
+    echo "Login succesvol";
+}
+
 ?>
 
 <!doctype html>
@@ -56,12 +75,21 @@ if (empty($email) || empty($password)) {
     <main class="center-screen" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;">
         <h2>Inloggen</h2>
 
+        <form action="Login.php" method="post">
         <input type="email" placeholder="E-mail" name="email">
-        <input type="Password" placeholder="Wachtwoord" name="password" style="margin-top: 10px;">
+        <input type="password" placeholder="Wachtwoord" name="password" style="margin-top: 10px;">
+<input type="submit" style="margin-bottom: 20px;">
+</form>
         <a href = "wachtwoord_vergeten.html" style="margin-bottom: 20px;">Wachtwoord vergeten</a>
         <a href = "registreren.html" style="margin-bottom: 20px;">Registreren</a>
         <a class="buttonlink" href = "filmoverzicht.html" style="margin-bottom: 20px;">Inloggen</a>
     </main>
 </body>
+
+<p><?php if(!empty($SESSION['LoginError'])) {
+    echo $SESSION['LoginError'];
+} else {
+    echo "Login succesvol";
+} ?></p>
 
 </html>
