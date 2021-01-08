@@ -20,31 +20,36 @@ if (isset($_POST["Testpassword"])) {
 }
 
 if (empty($Testemail) || empty($Testpassword)) {
-    $SESSION['LoginError'] = "Email & Wachtwoord niet ingevoerd. ";
+    $testresult = "Email & Wachtwoord niet ingevoerd. ";
 } else {
+    $testresult = "Email & Wachtwoord succesvol ingevoerd. ";
     if (compareEmail($Testemail)) {
+        echo "Email aanwezig in de database. ";
         if (checkPassword($Testpassword, $Testemail)) {
+            echo "Wachtwoord correct ";
+
             $SubscriptionEndDate = getSubscibDate($Testemail);
 
             $SESSION['email'] = $Testemail;
             $SESSION['Login'] = true;
             $SESSION['EndDate'] = getSubscibDate($Testemail);
 
+
             if (!empty($SESSION['EndDate'])) {
-                $SESSION['ValidDate'] = checkSubscriptionDate($SESSION['EndDate']);
+              // $SESSION['ValidDate'] = checkSubscriptionDate($SESSION['EndDate']);
             } elseif (empty($SESSION['EndDate'])) {
                 $SESSION['ValidDate'] = true;
             } else {
                 $SESSION['ValidDate'] = false;
             }
 
-            //Doorsturen naar home pagina
+
             //header("Location: index.php");
         } else {
-           $SESSION['LoginError'] = "Wachtwoord incorrect";
+            echo "Wachtwoord incorrect";
         }
     } else {
-        $SESSION['LoginError'] = "Email niet aanwezig in de database.";
+        echo "Email niet aanwezig in de database.";
     }
 };
 ?>
@@ -62,14 +67,26 @@ if (empty($Testemail) || empty($Testpassword)) {
 
 <body> 
 
-<h1>Login Test</h1>
+<h1>User toevoegen Test</h1>
 
 <form action="databaseUsersTest.php" method="post">
 E-mail <input type="text" name="Testemail"><br>
 Password <input type="password" name="Testpassword"><br>
-<input type="date"name="DatumChecker"></input><br>
+<input type="date"name="DatumChecker">DatumChecker</input><br>
 <input type="submit">
 </form>
+
+<p><?=$testresult?></p>
+<p>Ingevoerde email is: <?=$Testemail?></p>
+<p>Ingevoerd wachtwoord is: <?=$Testpassword?></p>
+
+<p>Werkend Email: a.nunc@seddolor.com</p>
+<p>Werkend PW bij Email: In</p>
+
+<p>Session email is: <?=$SESSION['email']?></p>
+<p>Session Login: <?=$SESSION['Login']?></p>
+<p>Subscription End Date is: <?=$SubscriptionEndDate?></p>
+<p>Subscription End Date is: <?=$SESSION['EndDate']?></p>
 
 </body>
 
