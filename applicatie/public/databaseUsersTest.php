@@ -2,6 +2,8 @@
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
+session_start();
+
 $SubscriptionEndDate = 0;
 
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
@@ -32,17 +34,25 @@ if (empty($Testemail) || empty($Testpassword)) {
 
             $SESSION['email'] = $Testemail;
             $SESSION['Login'] = true;
-            $SESSION['EndDate'] = $SubsriptionEndDate;
+            $SESSION['EndDate'] = getSubscibDate($Testemail);
 
-        //header("Location: index.php");
+
+            if (!empty($SESSION['EndDate'])) {
+               $SESSION['ValidDate'] = checkSubscriptionDate($SESSION['EndDate']);
+            } elseif (empty($SESSION['EndDate'])) {
+                $SESSION['ValidDate'] = true;
+            } else {
+                $SESSION['ValidDate'] = false;
+            }
+
+
+            //header("Location: index.php");
         } else {
             echo "Wachtwoord incorrect";
         }
     } else {
         echo "Email niet aanwezig in de database.";
     }
-
-
 };
 
 ?>
@@ -78,6 +88,7 @@ Password <input type="password" name="Testpassword"><br>
 
 <p>Session email is: <?=$SESSION['email']?></p>
 <p>Session Login: <?=$SESSION['Login']?></p>
+<p>Subscription End Date is: <?=$SubscriptionEndDate?></p>
 <p>Subscription End Date is: <?=$SESSION['EndDate']?></p>
 
 </body>
