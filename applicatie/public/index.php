@@ -29,7 +29,9 @@ $randomString = '';
 for ($i = 0; $i < 10; $i++) {
     $randomString .= $characters[rand(0, $charactersLength - 1)];
 }
-echo "<br> random code: {$randomString} <br>"
+echo "<br> random code: {$randomString} <br>";
+
+header("Location: pages.php");
 
 ?>
 
