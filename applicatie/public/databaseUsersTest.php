@@ -4,6 +4,8 @@ require_once 'php/simple_functions.php';
 
 session_start();
 
+$SubscriptionEndDate = 0;
+
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
 
 if (isset($_POST["Testemail"])) {
@@ -36,7 +38,7 @@ if (empty($Testemail) || empty($Testpassword)) {
 
 
             if (!empty($SESSION['EndDate'])) {
-              // $SESSION['ValidDate'] = checkSubscriptionDate($SESSION['EndDate']);
+                // $SESSION['ValidDate'] = checkSubscriptionDate($SESSION['EndDate']);
             } elseif (empty($SESSION['EndDate'])) {
                 $SESSION['ValidDate'] = true;
             } else {
@@ -52,6 +54,16 @@ if (empty($Testemail) || empty($Testpassword)) {
         echo "Email niet aanwezig in de database.";
     }
 };
+
+
+
+
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE HTML>
@@ -67,26 +79,33 @@ if (empty($Testemail) || empty($Testpassword)) {
 
 <body> 
 
-<h1>User toevoegen Test</h1>
+<h3>Login Test</h3>
 
 <form action="databaseUsersTest.php" method="post">
 E-mail <input type="text" name="Testemail"><br>
 Password <input type="password" name="Testpassword"><br>
-<input type="date"name="DatumChecker">DatumChecker</input><br>
+
 <input type="submit">
 </form>
 
-<p><?=$testresult?></p>
-<p>Ingevoerde email is: <?=$Testemail?></p>
-<p>Ingevoerd wachtwoord is: <?=$Testpassword?></p>
+<h3>Werkende Login</h3>
+<p>a.nunc@sitamet.com<br>nunc</p>
 
-<p>Werkend Email: a.nunc@seddolor.com</p>
-<p>Werkend PW bij Email: In</p>
+<h3>Wijziging Database gegevens</h3>
+<form action="databaseUsersTest.php" method="post">
+<select name="update" id="cars">
+  <option value="email">Email</option>
+  <option value="password">Wachtwoord</option>
+  <option value="endDate">Eind Datum</option>
+  <option value="firstname">Firstname</option>
+</select><br>
 
-<p>Session email is: <?=$SESSION['email']?></p>
-<p>Session Login: <?=$SESSION['Login']?></p>
-<p>Subscription End Date is: <?=$SubscriptionEndDate?></p>
-<p>Subscription End Date is: <?=$SESSION['EndDate']?></p>
+Nieuw gegeven <input type="text" name="newData"><br>
+
+
+
+<input type="submit">
+</form>
 
 </body>
 

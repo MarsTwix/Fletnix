@@ -117,7 +117,7 @@ function alterUserEmail($newEmail, $oldEmail) {
 
     global $dbh;
 
-    $sql = "UPDATE Customer SET customer_mail_address = :oldEmail where customer_mail_address = :newEmail";
+    $sql = "UPDATE Customer SET customer_mail_address = :newEmail where customer_mail_address = :oldEmail";
 
     $query = $dbh->prepare($sql);
 
@@ -126,8 +126,16 @@ function alterUserEmail($newEmail, $oldEmail) {
     return null;
 }
 
-function alterUser() {
-    
+function alterUser($Item, $user, $newItem) {
+    global $dbh;
+
+    $sql = "UPDATE Customer SET :Item = :newItem where customer_mail_address = :user";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":Item" => $Item, ":user" => $user, ":newItem" => $newItem));
+
+    return null;
 }
 
 
