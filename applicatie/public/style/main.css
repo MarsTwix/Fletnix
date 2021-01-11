@@ -153,11 +153,11 @@ div.link{
 }
 
 .abonnement h2{
-    color: rgb(0, 128, 255);
+    color: rgb(0, 72, 255);
 }
 
 .abonnement h3{
-    color: rgb(0, 78, 155);;
+    color: rgb(0, 153, 255);
 }
 
 .registreren{
@@ -168,7 +168,7 @@ div.link{
 }
 
 .logo{
-    width: 200px;
+    width: 100px;
 }
 
 label{
@@ -189,4 +189,24 @@ select{
     
 margin-top: 50px; 
 margin-left: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+
+td, th {
+    border: 1px solid #dddddd;
+    border-style: none none solid none;
+    padding: 8px;
+  }
+
+th.item{
+    border-style: none solid solid solid;
+}
+
+th:nth-child(even){
+    border-style: none none solid none;
 }

@@ -17,36 +17,35 @@ if (isset($_POST["password"])) {
 }
 
 if (empty($email) || empty($password)) {
-    $SESSION['LoginError'] = "Email & Wachtwoord niet ingevoerd. ";
+    $_SESSION['LoginError'] = "Email & Wachtwoord niet ingevoerd. ";
 } else {
     if (compareEmail($email)) {
         if (checkPassword($password, $email)) {
             $SubscriptionEndDate = getSubscibDate($email);
 
-            $SESSION['email'] = $email;
-            $SESSION['Login'] = true;
-            $SESSION['EndDate'] = getSubscibDate($email);
+            $_SESSION['email'] = $email;
+            $_SESSION['Login'] = true;
+            $_SESSION['EndDate'] = getSubscibDate($email);
 
-            if (!empty($SESSION['EndDate'])) {
-                $SESSION['ValidDate'] = checkSubscriptionDate($SESSION['EndDate']);
-            } elseif (empty($SESSION['EndDate'])) {
-                $SESSION['ValidDate'] = true;
+            if (!empty($_SESSION['EndDate'])) {
+                $_SESSION['ValidDate'] = checkSubscriptionDate($_SESSION['EndDate']);
+            } elseif (empty($_SESSION['EndDate'])) {
+                $_SESSION['ValidDate'] = true;
             } else {
-                $SESSION['ValidDate'] = false;
+                $_SESSION['ValidDate'] = false;
             }
 
-            //Doorsturen naar home pagina
-            //header("Location: index.php");
+            header("Location: index.php");
         } else {
-            $SESSION['LoginError'] = "Wachtwoord incorrect";
+            $_SESSION['LoginError'] = "Wachtwoord incorrect";
         }
     } else {
-        $SESSION['LoginError'] = "Email niet aanwezig in de database.";
+        $_SESSION['LoginError'] = "Email niet aanwezig in de database.";
     }
 };
 
-if(!empty($SESSION['LoginError'])) {
-    echo $SESSION['LoginError'];
+if(!empty($_SESSION['LoginError'])) {
+    echo $_SESSION['LoginError'];
 } else {
     echo "Login succesvol";
 }
@@ -90,7 +89,7 @@ if(!empty($SESSION['LoginError'])) {
             </div>
             
             <div class="centertext link ">
-                <a href = "registreren.html">Registreren</a>
+                <a href = "registreren.php">Registreren</a>
             </div>
             
             <div class="centertext">
@@ -102,8 +101,8 @@ if(!empty($SESSION['LoginError'])) {
 
 
 <!-- Weergeven error tijdens inloggen, verwijder bij oplevering -->
-<p><?php if(!empty($SESSION['LoginError'])) {
-    echo $SESSION['LoginError'];
+<p><?php if(!empty($_SESSION['LoginError'])) {
+    echo $_SESSION['LoginError'];
 } else {
     echo "Login succesvol";
 } ?></p>

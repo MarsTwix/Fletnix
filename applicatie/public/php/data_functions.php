@@ -1,6 +1,6 @@
 <?php
 require_once 'php/db_connectie.php';
-
+require_once 'php/simple_functions.php';
 
 
   function haalAlleFilmsOp()
@@ -110,7 +110,7 @@ function addUser($NewEmail, $NewPassword, $firstname, $lastname, $username, $Car
 
     $query->execute(array(":email" => $email));
 
-    return null;
+    return;
 }
 
 function alterUserEmail($newEmail, $oldEmail) {
@@ -123,7 +123,7 @@ function alterUserEmail($newEmail, $oldEmail) {
 
     $query->execute(array(":oldEmail" => $oldEmail, ":newEmail" => $newEmail));
 
-    return null;
+    return;
 }
 
 function alterUser($Item, $user, $newItem) {
@@ -135,13 +135,54 @@ function alterUser($Item, $user, $newItem) {
 
     $query->execute(array(":Item" => $Item, ":user" => $user, ":newItem" => $newItem));
 
-    return null;
+    return;
 }
 
+function getCountries(){
+    global $dbh;
 
+    $query = $dbh->query("SELECT * FROM Country");
+    while($row = $query->fetch(PDO::FETCH_NUM)){
+        $data[] = $row[0];
+    }
+    
+    return $data;
+}
 
+function getContractData(){
+    global $dbh;
 
+    $query = $dbh->query("SELECT * FROM Contract");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
 
+    return $data;
+}
 
+function getContracts(){
+    
+    return contractDataByIndex(0);
+}
+
+function getPrice(){
+    return contractDataByIndex(1);
+}
+
+function getCustomerData($email, $collumn){
+    global $dbh;
+
+    $query = $dbh->query("SELECT * FROM Customer WHERE customer_mail_address = '$email'");
+    $data = $query->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($data);
+    return $data[0][$collumn];
+}
+
+function getFirstname($email){
+
+    return getCustomerData($email, 'firstname');
+}
+function getLastname($email){
+
+    return getCustomerData($email, 'lastname');
+}
 
 ?>

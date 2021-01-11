@@ -1,5 +1,5 @@
 <?php
-require_once 'php/data_functions.php';
+require_once 'php/simple_functions.php';
 
 function compareEmail($Data)
 {
@@ -44,4 +44,15 @@ function checkSubscriptionDate($endDate)
         echo "Account verlopen";
         return false;
     }
+}
+
+function contractDataByIndex($index){
+    $data = getContractData();
+    $contractData = [];
+    for($i=0; $i<sizeof($data); $i++){
+        for($j=0; $j<sizeof($data[$i]); $j++){
+            $contractData[$j][] = $data[$i][$j];
+        }
+    }
+    return $contractData[$index];
 }

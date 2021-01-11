@@ -1,3 +1,11 @@
+<?php
+    require_once "php/data_functions.php";
+    session_start();
+    $email = $_SESSION['email'];
+    $firstname = getFirstname($email);
+    $lastname = getLastName($email);
+?>
+
 <!doctype html>
 
 <html>
@@ -18,13 +26,13 @@
 
     <main class="account">
         <div class="centertext">
-        <h2>Email: you@gmail.com</h2>
-        <br><br>
-        <a class="buttonlink" href="account.html" >Email wijzigen</a>
-        <br><br>
-        <h2>Wachtwoord: ***********</h2>
-        <br><br>
-        <a class="buttonlink" href="Wachtwoord_wijzigen.html" >Wachtwoord wijzigen</a>
+            <?=$email?>
+            </div>
+            <div class="centertext link">
+            <a class="buttonlink" href="account.html" >Email wijzigen</a>
+            </div>
+            <div class="centertext link">
+            <a class="buttonlink" href="Wachtwoord_wijzigen.html" >Wachtwoord wijzigen</a>
         </div>
 
     </main>
