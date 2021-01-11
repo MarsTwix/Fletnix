@@ -55,7 +55,10 @@ if (empty($Testemail) || empty($Testpassword)) {
     }
 };
 
+if($_POST['newData'] = $_POST['dataConfirm']) {
+echo "is gelijk";
 
+}
 
 
 
