@@ -8,7 +8,7 @@ services:
     # TODO: check how to restrict to localhost
     ports:
       - target: "80"
-        published: "8000"
+        published: "8080"
         protocol: tcp
         mode: bridge
     healthcheck:
