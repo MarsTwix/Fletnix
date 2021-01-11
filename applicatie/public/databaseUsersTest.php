@@ -93,7 +93,7 @@ Password <input type="password" name="Testpassword"><br>
 
 <h3>Wijziging Database gegevens</h3>
 <form action="databaseUsersTest.php" method="post">
-<select name="update" id="cars">
+<select name="update">
   <option value="email">Email</option>
   <option value="password">Wachtwoord</option>
   <option value="endDate">Eind Datum</option>
@@ -101,7 +101,7 @@ Password <input type="password" name="Testpassword"><br>
 </select><br>
 
 Nieuw gegeven <input type="text" name="newData"><br>
-
+Bevestig nieuw gegeven <input type="text" name="dataConfirm"><br>
 
 
 <input type="submit">
