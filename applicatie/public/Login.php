@@ -78,7 +78,7 @@ if(!empty($SESSION['LoginError'])) {
         <form action="Login.php" method="post">
         <input type="email" placeholder="E-mail" name="email">
         <input type="password" placeholder="Wachtwoord" name="password" style="margin-top: 10px;">
-<input type="submit" style="margin-bottom: 20px; margin-left: 33%; margin-right: auto;">
+<input type="submit" name="Inloggen" style="margin-bottom: 20px; margin-left: 33%; margin-right: auto;">
 </form>
         <a href = "wachtwoord_vergeten.html" style="margin-bottom: 20px;">Wachtwoord vergeten</a>
         <a href = "registreren.html" style="margin-bottom: 20px;">Registreren</a>

@@ -113,4 +113,25 @@ function addUser($NewEmail, $NewPassword, $firstname, $lastname, $username, $Car
     return null;
 }
 
+function alterUserEmail($newEmail, $oldEmail) {
+
+    global $dbh;
+
+    $sql = "UPDATE Customer SET customer_mail_address = :oldEmail where customer_mail_address = :newEmail";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":oldEmail" => $oldEmail, ":newEmail" => $newEmail));
+
+    return null;
+}
+
+function alterUser
+
+
+
+
+
+
+
 ?>
