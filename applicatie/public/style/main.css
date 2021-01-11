@@ -190,3 +190,10 @@ select{
 margin-top: 50px; 
 margin-left: 20px;
 }
+.films{
+margin: 0 20px;
+}
+
+.filmbg{
+    background-image: url("../img/filmbg.jpg");
+}
