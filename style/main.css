@@ -14,10 +14,10 @@ h2{
 
 h3{
     font-family: Avenir Roman,sans-serif;
-    margin-top: -5px;
     color: white;
     font-weight: bold;
     font-size: 30px;
+    margin:0;
 }
 
 p{
@@ -68,7 +68,6 @@ nav{
 }
 
 .centertext{
-    position: static;
     text-align: center;
 }
 
@@ -78,6 +77,9 @@ nav{
     flex-direction: column;
     margin-top: 10%;
 }
+.bgcolor{
+    background-color: rgb(172,194,218);
+}
 .bg{
     background-repeat: no-repeat;
   background-attachment: fixed; 
@@ -85,7 +87,15 @@ nav{
 }
 
 .homeImg{
-    background-image: url('homepage_background.jpg');
+    background-image: url('../img/homepage_background.jpg');
+}
+
+.overonsImg{
+    background-image: url('../img/OverOns_background.jpg');
+}
+
+.loginImg{
+    background-image: url('../img/login_background.jpg');
 }
 
 @media only screen and (max-width: 600px){
@@ -102,19 +112,26 @@ nav{
     }
 }
 
+div.link{
+    height: 50px;
+}
+
 .overons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-width: 1000px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 
-main{
-    margin-top: 5%;
+.blackbg{
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+}
+
+.login{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
 }
 
 input{
@@ -131,7 +148,7 @@ input{
     display: grid;
 }
 
-#registreren{
+.registreren{
     min-width: 1000px;
     max-width: 1000px;
     margin-left: auto;
@@ -145,11 +162,6 @@ input{
     margin-top: -20px;
     text-align: left;
     display:inline;
-}
-
-.login{
-    display: flex;
-    justify-content: center;
 }
 
 label{
@@ -180,8 +192,7 @@ select{
 }
 
 .logo{
-    position: absolute;
-    margin: 30px;
+    width: 200px;
 }
 .lego_movie{
 text-align: center;
