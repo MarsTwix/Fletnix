@@ -54,6 +54,7 @@ if(!empty($SESSION['LoginError'])) {
 ?>
 
 <!doctype html>
+
 <html>
 
 <head>
@@ -64,25 +65,38 @@ if(!empty($SESSION['LoginError'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body style="background-color:black;">
+<body class = 'bg loginImg'>
 
-    <a class = "logo" href="homepage.html"> <img style="height: 100px;" src="img/logo.png"> </a>
-    <div id="background">
-        <img src="img/login_background.jpg" style="opacity: 0.4;" width="100%">
-    </div>
-     <header style="clear: both;"></header>
+    <header>
+        <a href="homepage.html"> <img class = "logo" src="img/logo.png"> </a>
+    </header>
 
-    <main class="center-screen" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;">
-        <h2>Inloggen</h2>
+    <main class="login blackbg">
 
+        <div class="centertext">
+            <h2>Inloggen</h2>
+        </div>
         <form action="Login.php" method="post">
-        <input type="email" placeholder="E-mail" name="email">
-        <input type="password" placeholder="Wachtwoord" name="password" style="margin-top: 10px;">
-<input type="submit" name="Inloggen" style="margin-bottom: 20px; margin-left: 33%; margin-right: auto;">
-</form>
-        <a href = "wachtwoord_vergeten.html" style="margin-bottom: 20px;">Wachtwoord vergeten</a>
-        <a href = "registreren.html" style="margin-bottom: 20px;">Registreren</a>
-        <a class="buttonlink" href = "filmoverzicht.html" style="margin-bottom: 20px;">Inloggen</a>
+            <div class="centertext">
+                <input type="email" placeholder="E-mail" name="email">
+            </div>
+
+            <div class="centertext">
+                <input type="password" placeholder="Wachtwoord" name="password">
+            </div>
+        
+            <div class="centertext link ">
+                <a href = "wachtwoord_vergeten.html">Wachtwoord vergeten</a>
+            </div>
+            
+            <div class="centertext link ">
+                <a href = "registreren.html">Registreren</a>
+            </div>
+            
+            <div class="centertext">
+                <input class = "buttonlink" type="submit" name="Inloggen" value="Inloggen">
+            </div>
+        </form> 
     </main>
 </body>
 
