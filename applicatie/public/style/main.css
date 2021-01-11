@@ -210,3 +210,10 @@ th.item{
 th:nth-child(even){
     border-style: none none solid none;
 }
+.films{
+margin: 0 20px;
+}
+
+.filmbg{
+    background-image: url("../img/filmbg.jpg");
+}
