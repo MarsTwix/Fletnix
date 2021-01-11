@@ -126,7 +126,9 @@ function alterUserEmail($newEmail, $oldEmail) {
     return null;
 }
 
-function alterUser
+function alterUser() {
+    
+}
 
 
 
