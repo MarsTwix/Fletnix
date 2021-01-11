@@ -14,12 +14,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body class="bgcolor">
+<body class="filmbg bg">
     <nav class="back">
         <a class="buttonlink" href="accountdetail.html">BACK</a>
     </nav>
 
-    <main class="center-screen bgcolor">
+    <main class="center-screen filmbg bg">
         <h2 class="centertext">Email wijzigen</h2>
 
         <input type="email" placeholder="Email">

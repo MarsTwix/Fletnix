@@ -21,7 +21,7 @@ foreach ($dir as $fileinfo) {
     <link rel="icon" href="img/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body class="bgcolor"></body>
+<body class="filmbg bg"></body>
 <div class = "centertext">
     <h1>Alle pagina's</h1>
 </div>

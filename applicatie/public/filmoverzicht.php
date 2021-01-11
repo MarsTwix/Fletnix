@@ -16,7 +16,7 @@ require_once 'php/data_functions.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body class ="filmbg">
+<body class ="filmbg bg">
     <nav>
         <h1 class="centertext">FLETNIX</h1>
         <a class="buttonlink" href = "pages.php" >Alle Pagina's</a>
