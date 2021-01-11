@@ -1,9 +1,7 @@
 <?php
     require_once "php/data_functions.php";
     session_start();
-    $email = $_SESSION['email'];
-    $firstname = getFirstname($email);
-    $lastname = getLastName($email);
+    $customer = getCustomerData($_SESSION['email']);
 ?>
 
 <!doctype html>
@@ -26,7 +24,7 @@
 
     <main class="account">
         <div class="centertext">
-            <?=$email?>
+            <?=$customer['customer_mail_address']?>
             </div>
             <div class="centertext link">
             <a class="buttonlink" href="account.html" >Email wijzigen</a>

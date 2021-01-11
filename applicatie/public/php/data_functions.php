@@ -167,22 +167,12 @@ function getPrice(){
     return contractDataByIndex(1);
 }
 
-function getCustomerData($email, $collumn){
+function getCustomerData($email){
     global $dbh;
 
     $query = $dbh->query("SELECT * FROM Customer WHERE customer_mail_address = '$email'");
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($data);
-    return $data[0][$collumn];
-}
-
-function getFirstname($email){
-
-    return getCustomerData($email, 'firstname');
-}
-function getLastname($email){
-
-    return getCustomerData($email, 'lastname');
+    return $data[0];
 }
 
 ?>

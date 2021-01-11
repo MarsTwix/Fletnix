@@ -1,3 +1,10 @@
+<?php
+require_once 'php/data_functions.php';
+    session_start();
+    $customer = getCustomerData($_SESSION['email']);
+    $accountButton = "<a href = 'accountdetail.php'><h3>Welkom terug, {$customer['firstname']} {$customer['lastname']}!</h3></a>";
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,9 +19,9 @@
 <body class ="filmbg">
     <nav>
         <h1 class="centertext">FLETNIX</h1>
-        <a class="buttonlink" href = "accountdetail.html">Account</a>
         <a class="buttonlink" href = "pages.php" >Alle Pagina's</a>
         <a class="buttonlink" href = "filter.html">Zoeken</a>
+        <?= $accountButton?>
     </nav>
 
   <h2 class="back">Aanbevolen voor jou!</h2>
