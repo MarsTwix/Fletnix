@@ -151,7 +151,7 @@ function getCustomerData($email){
 
     $sql = "SELECT * FROM Customer WHERE customer_mail_address = :email";
     $query = $dbh->prepare($sql);
-    $query = execute(array(':email' => $email));
+    $query->execute(array(':email' => $email));
 
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
     return $data[0];
