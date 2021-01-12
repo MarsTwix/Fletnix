@@ -16,7 +16,6 @@ require_once 'php/simple_functions.php';
 
 ?>
 
-
 <!doctype html>
 
 <html>

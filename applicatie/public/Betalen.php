@@ -37,7 +37,7 @@
         </div>
         <! -- check of het wel nummer zijn -->
         <div class="centertext">
-            <input type="text" placeholder="Rekeningnummer">
+            <input type="number" placeholder="Rekeningnummer">
         </div>
             
         <div class="centertext link">

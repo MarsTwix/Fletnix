@@ -1,7 +1,7 @@
 <?php
 require_once "php/data_functions.php";
 
-function filterNaarHTML($films) {
+function filterToHTML($films) {
     global $dbh;
     $html = '';
     foreach ($films as $film) {
