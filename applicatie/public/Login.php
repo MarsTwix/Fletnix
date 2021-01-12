@@ -62,7 +62,7 @@ if (empty($email) || empty($password)) {
 <body class = 'bg loginImg'>
 
     <header>
-        <a href="homepage.html"> <img class = "logo" src="img/logo.png"> </a>
+        <a href="homepage.php"> <img class = "logo" src="img/logo.png"> </a>
     </header>
 
     <main class="login blackbg">

@@ -18,7 +18,7 @@
 
         <h1 id="fletnix">FLETNIX</h1>
 
-        <a class="buttonlink" href="homepage.html">HOME</a>
+        <a class="buttonlink" href="homepage.php">HOME</a>
         <a class="buttonlink" href = "filmoverzicht_preview.html">PREVIEW</a>
         <a class="buttonlink" href="login.html">INLOGGEN</a>
     </nav>
@@ -53,5 +53,6 @@
     </main>
 </body>
 
+<?php include 'footer.php'; ?>
 
 </html>

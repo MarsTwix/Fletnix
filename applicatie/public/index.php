@@ -42,7 +42,7 @@ header("Location: pages.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-  <a href='homepage.html'>films.php</a> 
+  <a href='homepage.php'>films.php</a> 
   <a href='databaseUsersTest.php'>databaseUsersTest</a>
   </body>
 </html>
