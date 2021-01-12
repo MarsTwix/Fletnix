@@ -17,7 +17,7 @@
 
 <body class="filmbg bg">
     <header>
-        <a href="homepage.html"> <img class = "logo" src="img/logo.png"> </a>
+        <a href="homepage.php"> <img class = "logo" src="img/logo.png"> </a>
     </header>
     <main>
         <div>
@@ -32,6 +32,5 @@
     </main>
 </body>
 
-<?php include 'footer.php'; ?>
 
 </html>
