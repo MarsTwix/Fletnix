@@ -113,27 +113,14 @@ function addUser($NewEmail, $NewPassword, $firstname, $lastname, $username, $Car
     return;
 }
 
-function alterUserEmail($newEmail, $oldEmail) {
-
+function alterUserData($Item, $email, $newItem) {
     global $dbh;
 
-    $sql = "UPDATE Customer SET customer_mail_address = :newEmail where customer_mail_address = :oldEmail";
+    $sql = "UPDATE Customer SET :Item = :newItem where customer_mail_address = :email";
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":oldEmail" => $oldEmail, ":newEmail" => $newEmail));
-
-    return;
-}
-
-function alterUser($Item, $user, $newItem) {
-    global $dbh;
-
-    $sql = "UPDATE Customer SET :Item = :newItem where customer_mail_address = :user";
-
-    $query = $dbh->prepare($sql);
-
-    $query->execute(array(":Item" => $Item, ":user" => $user, ":newItem" => $newItem));
+    $query->execute(array(":Item" => $Item, ":email" => $user, ":newItem" => $newItem));
 
     return;
 }
