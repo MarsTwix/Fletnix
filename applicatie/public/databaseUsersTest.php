@@ -58,43 +58,6 @@ if (empty($Testemail) || empty($Testpassword)) {
 };
 
 
-if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
-    if ($_POST['newData'] = $_POST['dataConfirm']) {
-        $html = "Input gelijk";
-
-        switch ($_POST['update']) {
-    case "email":
-    $html = "Poging tot wijziging e-mail";
-    if (!compareEmail($_POST['newData'])) {
-        alterUserData("customer_mail_address", $SESSION['email'], $_POST['newData']);
-        $html = "Email succesvol aangepast.";
-    }
-    break;
-
-    case "password":
-    $html = "Poging tot wijziging wachtwoord";
-    break;
-    case "endDate":
-    $html = "Poging tot wijziging datum";
-    break;
-    case "firstName":
-    $html = "Poging tot wijziging naam";
-    alterUserData("firstname", $_POST['Testemail'], $_POST['newData']);
-    break;
-    default:
-    $html = "Geen keuze gemaakt";
-    break;
-    }
-    } else {
-        $html = "Input is niet gelijk";
-    }
-}
-
-
-
-
-
-
 
 
 ?>
@@ -122,7 +85,19 @@ Password <input type="password" name="Testpassword"><br>
 <p>a.nunc@sitamet.com<br>nunc</p>
 
 <h3>Wijziging Database gegevens</h3>
-<select name="update">
+<select name="Payment">
+  <option value="email">Email</option>
+  <option value="password">Wachtwoord</option>
+  <option value="endDate">Eind Datum</option>
+  <option value="firstName">Firstname</option>
+</select><br>
+<select name="Gender">
+  <option value="email">Email</option>
+  <option value="password">Wachtwoord</option>
+  <option value="endDate">Eind Datum</option>
+  <option value="firstName">Firstname</option>
+</select><br>
+<select name="Payment">
   <option value="email">Email</option>
   <option value="password">Wachtwoord</option>
   <option value="endDate">Eind Datum</option>

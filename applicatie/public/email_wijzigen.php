@@ -44,7 +44,6 @@ $html = "<h3>mail ingevoerd</h3>";
         <a class="buttonlink" href = "account.php">wijzigen</a>
         </form>
 
-<?=$html?>
 
     </main>
 
