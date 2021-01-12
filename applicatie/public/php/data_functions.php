@@ -187,7 +187,7 @@ function searchMovies($selectedGenres, $director, $year, $title){
         }
         $sql .= " movie_id IN (SELECT md.movie_id FROM Movie_Director AS md INNER JOIN Person AS p ON md.person_id = p.person_id WHERE firstname + ' ' + lastname like ?)";
         $lastWhere = true;
-        $execute[] = "%$director}%";
+        $execute[] = "%$director%";
     }
 
     if(!empty($year)){
@@ -199,7 +199,7 @@ function searchMovies($selectedGenres, $director, $year, $title){
         }
         $sql .= " publication_year = ?";
         $lastWhere = true;
-        $execute[] = "{$year}";
+        $execute[] = "$year";
     }
 
     if(!empty($title)){
@@ -211,7 +211,7 @@ function searchMovies($selectedGenres, $director, $year, $title){
         }
         $sql .= " title like ?";
         $lastWhere = true;
-        $execute[] = "%{$title}%";
+        $execute[] = "%$title%";
     }
 
     global $dbh;
