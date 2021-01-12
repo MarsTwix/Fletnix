@@ -64,3 +64,21 @@ function getCountries(){
 function getPaymentMethods(){
     return getAllData('Payment');
 }
+
+function getGenres(){
+    $data = getAllData('Payment');
+    $genre = [];
+    foreach($data as $item){
+        $genre[]=$item[0];
+    }
+    return $genre;
+}
+
+function getContracts(){
+    
+    return contractDataByIndex(0);
+}
+
+function getPrice(){
+    return contractDataByIndex(1);
+}

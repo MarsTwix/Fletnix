@@ -1,3 +1,13 @@
+<?php
+    require_once 'php/simple_functions.php';
+    $htmlGenre='';
+    $genres = getGenres();
+    foreach($genres as $genre){
+        $htmlGenre .= "<input type='checkbox' id=$genre name='genre'>";
+        $htmlGenre .= "<label for=>Actie</label>";
+    }
+?>
+
 <!doctype html>
 
 <html>
@@ -34,7 +44,7 @@
             <input type="number" placeholder="publicatiejaar">
         </div>
         <div class="centertext">
-            <input type="text" placeholder="Zoeken naar woord">
+            <input type="text" placeholder="Zoeken naar titel">
         </div>
 
         <div class="centertext link">

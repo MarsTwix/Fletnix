@@ -79,7 +79,7 @@ if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
     break;
     case "firstName":
     $html = "Poging tot wijziging naam";
-    alterUserData("firstname", $SESSION['email'], $_POST['newData']);
+    alterUserData("firstname", $_POST['Testemail'], $_POST['newData']);
     break;
     default:
     $html = "Geen keuze gemaakt";
@@ -118,14 +118,10 @@ if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
 E-mail <input type="text" name="Testemail"><br>
 Password <input type="password" name="Testpassword"><br>
 
-<input type="submit">
-</form>
-
 <h3>Werkende Login</h3>
 <p>a.nunc@sitamet.com<br>nunc</p>
 
 <h3>Wijziging Database gegevens</h3>
-<form action="databaseUsersTest.php" method="post">
 <select name="update">
   <option value="email">Email</option>
   <option value="password">Wachtwoord</option>
@@ -136,7 +132,6 @@ Nieuw gegeven <input type="text" name="newData"><br>
 Bevestig nieuw gegeven <input type="text" name="dataConfirm"><br>
 <input type="submit">
 </form>
-
 <?=$html?>
 
 </body>
