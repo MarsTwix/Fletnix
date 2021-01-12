@@ -113,7 +113,8 @@ function addUser($NewEmail, $NewPassword, $firstname, $lastname, $username, $Car
     return;
 }
 
-function alterUserData($Item, $email, $newItem) {
+function alterUserData($Item, $user,  $newItem)
+{
     global $dbh;
 
     $sql = "UPDATE Customer SET :Item = :newItem where customer_mail_address = :email";
@@ -125,18 +126,20 @@ function alterUserData($Item, $email, $newItem) {
     return;
 }
 
-function getCountries(){
+function getCountries()
+{
     global $dbh;
 
     $query = $dbh->query("SELECT * FROM Country");
-    while($row = $query->fetch(PDO::FETCH_NUM)){
+    while ($row = $query->fetch(PDO::FETCH_NUM)) {
         $data[] = $row[0];
     }
     
     return $data;
 }
 
-function getContractData(){
+function getContractData()
+{
     global $dbh;
 
     $query = $dbh->query("SELECT * FROM Contract");
@@ -145,21 +148,21 @@ function getContractData(){
     return $data;
 }
 
-function getContracts(){
-    
+function getContracts()
+{
     return contractDataByIndex(0);
 }
 
-function getPrice(){
+function getPrice()
+{
     return contractDataByIndex(1);
 }
 
-function getCustomerData($email){
+function getCustomerData($email)
+{
     global $dbh;
 
     $query = $dbh->query("SELECT * FROM Customer WHERE customer_mail_address = '$email'");
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
     return $data[0];
 }
-
-?>
