@@ -1,5 +1,5 @@
 <?php
-require_once 'php/simple_functions.php';
+require_once 'php/data_functions.php';
 
 function compareEmail($Data)
 {
@@ -55,4 +55,12 @@ function contractDataByIndex($index){
         }
     }
     return $contractData[$index];
+}
+
+function getCountries(){
+    return getAllData('Country');
+}
+
+function getPaymentMethods(){
+    return getAllData('Payment');
 }

@@ -126,12 +126,11 @@ function alterUserData($Item, $user,  $newItem)
     return;
 }
 
-function getCountries()
-{
+function getAllData($table){
     global $dbh;
 
-    $query = $dbh->query("SELECT * FROM Country");
-    while ($row = $query->fetch(PDO::FETCH_NUM)) {
+    $query = $dbh->query("SELECT * FROM $table");
+    while($row = $query->fetch(PDO::FETCH_NUM)){
         $data[] = $row[0];
     }
     

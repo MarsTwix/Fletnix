@@ -10,8 +10,14 @@
 
     $htmlContracts='';
     $contractData = getContractData();
+    $i = 0;
     foreach($contractData as $contract){
-        $htmlContracts .= "<input type='radio' id=$contract[0] name='abonnement' value = $contract[0]>";
+        $htmlContracts .= "<input type='radio' id=$contract[0] name='abonnement' value = $contract[0]";
+        if($i == 0){
+            $htmlContracts .= " checked='checked'";
+            $i++;
+        }
+        $htmlContracts .= '>';
         $htmlContracts .= "<label for='$contract[0]'>$contract[0] € $contract[1]";
         if($contract[2] != '0'){
             $htmlContracts.="($contract[2]% OFF!)";
@@ -41,7 +47,7 @@
     <main class="registreren blackbg">
         <h2 class="centertext">Registreren</h2>
         <div class="centertext">
-        <input type="radio" id="man" name="geslacht" value="M">
+        <input type="radio" id="man" name="geslacht" value="M" checked="checked">
             <label for="man">De heer</label>
             <input type="radio" id="vrouw" name="geslacht" value="F">
             <label for="F">Mevrouw</label>
@@ -69,7 +75,7 @@
         <a class = "login" href="Login.php">Al een account? Hier kan je inloggen!</a>
     </div>
         <div class="centertext link">
-            <a class="buttonlink"  href="filmoverzicht.html">Registreren</a>
+            <a class="buttonlink"  href="betalen.php">Betalen</a>
         </div>
         
     </main>
