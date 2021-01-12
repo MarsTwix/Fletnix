@@ -11,7 +11,7 @@ $html = "<h3>mail ingevoerd</h3>";
         if ($_POST['newMail'] = $_POST['newMail2']) {
            $html = "<h3>mail gelijk</h3>";
             if (!compareEmail($_POST['newMail'])) {
-                alterUserData("customer_mail_address", $SESSION['email'], $_POST['newMail']);
+                alterUserData("customer_mail_address", $_SESSION['email'], $_POST['newMail']);
                 $html = "<h3>uitgevoerd</h3>";
             }
         }
