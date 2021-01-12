@@ -4,7 +4,6 @@ require_once 'php/simple_functions.php';
 require_once 'php/view_functions.php';
 
 session_start();
-
 if (isset($_POST["email"])) {
     $email = $_POST["email"];
 } else {
@@ -18,7 +17,7 @@ if (isset($_POST["password"])) {
 }
 
 if (empty($email) || empty($password)) {
-    $_SESSION['LoginError'] = "Email & Wachtwoord niet ingevoerd. ";
+    $error = "Email & Wachtwoord niet ingevoerd. ";
 } else {
     if (compareEmail($email)) {
         if (checkPassword($password, $email)) {
@@ -38,12 +37,18 @@ if (empty($email) || empty($password)) {
 
             header("Location: filmoverzicht.php");
         } else {
-            $_SESSION['LoginError'] = "Wachtwoord incorrect";
+            $error = "Wachtwoord incorrect";
         }
     } else {
-        $_SESSION['LoginError'] = "Email niet aanwezig in de database.";
+        $error = "Email niet aanwezig in de database.";
     }
 };
+if(empty($_POST['Inloggen'])){
+    $error ='';
+}
+else{
+    $error = errorMSG($error);
+}
 
 ?>
 
@@ -66,7 +71,7 @@ if (empty($email) || empty($password)) {
     </header>
 
     <main class="login blackbg">
-        <?= errorMSG("inloggen niet gelukt");?>
+        <?= $error?>
         <div class="centertext">
             <h2>Inloggen</h2>
         </div>
