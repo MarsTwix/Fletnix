@@ -68,4 +68,12 @@ function contractsToHTML(){
   $html .= '</table>';
   return $html;
 }
+
+
+function errorMSG($error){
+    $html =' <div class="error">';
+    $html .= "<p>$error</p>";
+    $html .= "</div>";
+    return $html;
+}
 ?>

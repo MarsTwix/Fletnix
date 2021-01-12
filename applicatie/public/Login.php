@@ -1,6 +1,7 @@
 <?php
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
+require_once 'php/view_functions.php';
 
 session_start();
 
@@ -65,7 +66,7 @@ if (empty($email) || empty($password)) {
     </header>
 
     <main class="login blackbg">
-
+        <?= errorMSG("inloggen niet gelukt");?>
         <div class="centertext">
             <h2>Inloggen</h2>
         </div>
