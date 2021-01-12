@@ -1,7 +1,13 @@
 <?php
-    require_once "php/data_functions.php";
-    session_start();
-    $customer = getCustomerData($_SESSION['email']);
+
+    if (!empty($_POST['newMail']) && !empty($_POST['newMail2'])) {
+        if ($_POST['newMail'] = $_POST['newMail2']) {
+            if (!compareEmail($_POST['newMail'])) {
+                alterUserData("customer_mail_address", $SESSION['email'], $_POST['newMail']);
+            }
+        }
+    }
+
 ?>
 
 <!doctype html>
@@ -22,18 +28,16 @@
     </nav>
 
 
-    <main class="account">
-        <div class="centertext">
-            <?=$customer['customer_mail_address']?>
-            </div>
-            <div class="centertext link">
-            <a class="buttonlink" href="account.html" >Email wijzigen</a>
-            </div>
-            <div class="centertext link">
-            <a class="buttonlink" href="Wachtwoord_wijzigen.html" >Wachtwoord wijzigen</a>
-        </div>
+        <form action="databaseUsersTest.php" method="post">
+        <input name="newMail" type="text" placeholder="Email">
+        <input type="newMail2" placeholder="Email opnieuw">
+        <input type="submit">
+        <a class="buttonlink" href = "accountdetail.html">wijzigen</a>
+        </form>
 
     </main>
+
 </body>
+
 
 </html>
