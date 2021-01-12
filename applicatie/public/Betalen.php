@@ -1,3 +1,13 @@
+<?php
+    require_once 'php/simple_functions.php';
+    $htmlPayment='';
+    $paymentMethods = getPaymentMethods();
+    $htmlPayment .= '<select name="payment method" id="payment method">';
+    foreach($paymentMethods as $paymentMethod){
+        $htmlPayment .= "<option value=$paymentMethod>$paymentMethod</option>";
+    }
+    $htmlPayment .= '</select>';
+?>
 <!doctype html>
 
 <html>
@@ -23,12 +33,7 @@
         </div>
         <! -- maak er een optie van net als bij registreren met landen -->
         <div class="centertext">
-            <input type="checkbox" id="Mastercard" name="betaalmethode">
-            <label for="actie">Mastercard</label>
-            <input type="checkbox" id="Visa" name="betaalmethode">
-            <label for="romantiek">Visa</label>
-            <input type="checkbox" id="Amex" name="betaalmethode">
-            <label for="komedie">Amex</label>
+            <?=$htmlPayment?>
         </div>
         <! -- check of het wel nummer zijn -->
         <div class="centertext">

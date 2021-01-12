@@ -35,7 +35,7 @@ if (empty($email) || empty($password)) {
                 $_SESSION['ValidDate'] = false;
             }
 
-            header("Location: index.php");
+            header("Location: filmoverzicht.php");
         } else {
             $_SESSION['LoginError'] = "Wachtwoord incorrect";
         }
@@ -43,12 +43,6 @@ if (empty($email) || empty($password)) {
         $_SESSION['LoginError'] = "Email niet aanwezig in de database.";
     }
 };
-
-if(!empty($_SESSION['LoginError'])) {
-    echo $_SESSION['LoginError'];
-} else {
-    echo "Login succesvol";
-}
 
 ?>
 
@@ -98,13 +92,5 @@ if(!empty($_SESSION['LoginError'])) {
         </form> 
     </main>
 </body>
-
-
-<!-- Weergeven error tijdens inloggen, verwijder bij oplevering -->
-<p><?php if(!empty($_SESSION['LoginError'])) {
-    echo $_SESSION['LoginError'];
-} else {
-    echo "Login succesvol";
-} ?></p>
 
 </html>
