@@ -41,7 +41,7 @@
         </div>
             
         <div class="centertext link">
-            <a class="buttonlink"  href="filmoverzicht.html">Betalen</a>
+            <a class="buttonlink"  href="filmoverzicht.php">Betalen</a>
         </div>
 
         </form> 
