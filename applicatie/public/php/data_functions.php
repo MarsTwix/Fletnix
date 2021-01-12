@@ -99,16 +99,16 @@ function getSubscibDate($email)
     }
 }
 
-function addUser($NewEmail, $NewPassword, $firstname, $lastname, $username, $Card, $CardNumber, $type, $country)
+function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNumber, $country, $gender, $date)
 {
     global $dbh;
 
-    $sql = "INSERT INTO Customer (customer_mail_address, lastname, firstname, password, user_name, contract_type, payment_method, payment_card_number, country_name, subscription_start)
-    VALUES ('test@test.nl', 'tset', 'test', 'test', 'testuser', 'Pro', 'Test', 09234123, 'Test', '2020-01-01')";
+    $sql = "INSERT INTO Customer (customer_mail_address, lastname, firstname, password, user_name, contract_type, payment_method, payment_card_number, country_name, subscription_start, gender, birth_date)
+    VALUES (:email, :password, :firstname, :lastname, :username, :type, :card, :cardNumber, :country, GETDATE(), :gender, :date)";
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":email" => $email));
+    $query->execute(array(":email" => $email, ':password' => $password, ':firstname' => $firstname, ':lastname' => $lastname, ':username' => 'username', ':type' => $type, ':card' => $card, ':cardNumber' => $cardNumber, ':country' => $country, ':gender' => $gender, ':date' => $date));
 
     return;
 }
