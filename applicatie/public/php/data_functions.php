@@ -99,21 +99,22 @@ function getSubscibDate($email)
     }
 }
 
-function addUser($NewEmail, $NewPassword, $firstname, $lastname, $username, $Card, $CardNumber, $type, $country)
+function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNumber, $country, $gender, $date)
 {
     global $dbh;
 
-    $sql = "INSERT INTO Customer (customer_mail_address, lastname, firstname, password, user_name, contract_type, payment_method, payment_card_number, country_name, subscription_start)
-    VALUES ('test@test.nl', 'tset', 'test', 'test', 'testuser', 'Pro', 'Test', 09234123, 'Test', '2020-01-01')";
+    $sql = "INSERT INTO Customer (customer_mail_address, lastname, firstname, password, user_name, contract_type, payment_method, payment_card_number, country_name, subscription_start, gender, birth_date)
+    VALUES (:email, :password, :firstname, :lastname, :username, :type, :card, :cardNumber, :country, GETDATE(), :gender, :date)";
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":email" => $email));
+    $query->execute(array(":email" => $email, ':password' => $password, ':firstname' => $firstname, ':lastname' => $lastname, ':username' => 'username', ':type' => $type, ':card' => $card, ':cardNumber' => $cardNumber, ':country' => $country, ':gender' => $gender, ':date' => $date));
 
     return;
 }
 
-function alterUserData($Item, $email, $newItem) {
+function alterUserData($Item, $user,  $newItem)
+{
     global $dbh;
 
     $sql = "UPDATE Customer SET :Item = :newItem where customer_mail_address = :email";
@@ -136,7 +137,8 @@ function getAllData($table){
     return $data;
 }
 
-function getContractData(){
+function getContractData()
+{
     global $dbh;
 
     $query = $dbh->query("SELECT * FROM Contract");
@@ -145,21 +147,21 @@ function getContractData(){
     return $data;
 }
 
-function getContracts(){
-    
+function getContracts()
+{
     return contractDataByIndex(0);
 }
 
-function getPrice(){
+function getPrice()
+{
     return contractDataByIndex(1);
 }
 
-function getCustomerData($email){
+function getCustomerData($email)
+{
     global $dbh;
 
     $query = $dbh->query("SELECT * FROM Customer WHERE customer_mail_address = '$email'");
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
     return $data[0];
 }
-
-?>
