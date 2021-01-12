@@ -7,7 +7,7 @@
             $selectedGenres[]=$genre;
         }
     }
-    $sql ='SELECT ';
+    $sql ='SELECT title FROM Movie';
     if(isset($selectedGenres)){
         foreach($selectedGenres as $genre){
 
