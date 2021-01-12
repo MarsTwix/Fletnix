@@ -1,9 +1,18 @@
 <?php
+session_start();
+
+require_once 'php/data_functions.php';
+require_once 'php/simple_functions.php';
+
+$html = "<h3>start</h3>";
 
     if (!empty($_POST['newMail']) && !empty($_POST['newMail2'])) {
+$html = "<h3>mail ingevoerd</h3>";
         if ($_POST['newMail'] = $_POST['newMail2']) {
+           $html = "<h3>mail gelijk</h3>";
             if (!compareEmail($_POST['newMail'])) {
                 alterUserData("customer_mail_address", $SESSION['email'], $_POST['newMail']);
+                $html = "<h3>uitgevoerd</h3>";
             }
         }
     }
@@ -28,12 +37,14 @@
     </nav>
 
 
-        <form action="databaseUsersTest.php" method="post">
+        <form action="email_wijzigen.php" method="post">
         <input name="newMail" type="text" placeholder="Email">
-        <input type="newMail2" placeholder="Email opnieuw">
+        <input name="newMail2" type="text" placeholder="Email opnieuw">
         <input type="submit">
         <a class="buttonlink" href = "accountdetail.html">wijzigen</a>
         </form>
+
+<?=$html?>
 
     </main>
 
