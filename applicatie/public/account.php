@@ -1,5 +1,13 @@
 <?php
-    
+
+    if (!empty($_POST['newMail']) && !empty($_POST['newMail2'])) {
+        if ($_POST['newMail'] = $_POST['newMail2']) {
+            if (!compareEmail($_POST['newMail'])) {
+                alterUserData("customer_mail_address", $SESSION['email'], $_POST['newMail']);
+            }
+        }
+    }
+
 ?>
 
 <!doctype html>
@@ -22,11 +30,16 @@
     <main class="center-screen filmbg bg">
         <h2 class="centertext">Email wijzigen</h2>
 
-        <input type="email" placeholder="Email">
-        <input type="email" placeholder="Email opnieuw">
+        <form action="databaseUsersTest.php" method="post">
+        <input name="newMail" type="text" placeholder="Email">
+        <input type="newMail2" placeholder="Email opnieuw">
+        <input type="submit">
         <a class="buttonlink" href = "accountdetail.html">wijzigen</a>
-        
+        </form>
+
     </main>
+
 </body>
+
 
 </html>
