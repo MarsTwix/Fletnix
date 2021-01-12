@@ -113,14 +113,14 @@ function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNu
     return;
 }
 
-function alterUserData($Item, $email, $newItem) {
+function alterUserData($item, $email, $newItem) {
     global $dbh;
 
-    $sql = "UPDATE Customer SET :Item = :newItem where customer_mail_address = :email";
+    $sql = "UPDATE Customer SET $item = :newItem where customer_mail_address = :email";
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":Item" => $Item, ":email" => $user, ":newItem" => $newItem));
+    $query->execute(array(":email" => $user, ":newItem" => $newItem));
 
     return;
 }
@@ -145,19 +145,13 @@ function getContractData(){
     return $data;
 }
 
-function getContracts(){
-    
-    return contractDataByIndex(0);
-}
-
-function getPrice(){
-    return contractDataByIndex(1);
-}
-
 function getCustomerData($email){
     global $dbh;
 
-    $query = $dbh->query("SELECT * FROM Customer WHERE customer_mail_address = '$email'");
+    $sql = "SELECT * FROM Customer WHERE customer_mail_address = :email";
+    $query = $dbh->prepare($sql);
+    $query = execute(array(':email' => $email));
+
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
     return $data[0];
 }
