@@ -2,7 +2,7 @@
 require_once 'php/data_functions.php';
     session_start();
     $customer = getCustomerData($_SESSION['email']);
-    $accountButton = "<a href = 'accountdetail.php'><h3>Welkom terug, {$customer['firstname']} {$customer['lastname']}!</h3></a>";
+    $accountButton = "<a href = 'account.php'><h3>Welkom terug, {$customer['firstname']} {$customer['lastname']}!</h3></a>";
 
 ?>
 <!DOCTYPE html>

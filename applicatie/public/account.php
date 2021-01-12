@@ -25,7 +25,7 @@
             <?=$customer['customer_mail_address']?>
             </div>
             <div class="centertext link">
-            <a class="buttonlink" href="account.html" >Email wijzigen</a>
+            <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
             </div>
             <div class="centertext link">
             <a class="buttonlink" href="Wachtwoord_wijzigen.html" >Wachtwoord wijzigen</a>
