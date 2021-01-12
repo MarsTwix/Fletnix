@@ -1,60 +1,16 @@
 <?php
     require_once 'php/simple_functions.php';
-    $htmlGenre='';
     $genres = getGenres();
+    $selectedGenres = [];
     foreach($genres as $genre){
-        $htmlGenre .= "<input type='checkbox' id=$genre name='genre'>";
-        $htmlGenre .= "<label for=>Actie</label>";
+        if(isset($_GET[$genre])){
+            $selectedGenres[]=$genre;
+        }
+    }
+    $sql ='SELECT ';
+    if(isset($selectedGenres)){
+        foreach($selectedGenres as $genre){
+
+        }
     }
 ?>
-
-<!doctype html>
-
-<html>
-
-<head>
-    <title>Fletnix - Filteren</title>
-    <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="icon" href="img/logo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-
-<body class="filmbg bg">
-
-    <main class="login blackbg">
-        <div class="centertext">
-            <h1>Filteren</h1>
-        </div>
-        <div class="centertext">
-            <h2>Genre:</h2>
-        </div>
-        <div class="centertext">
-            <input type="checkbox" id="actie" name="genre">
-            <label for="actie">Actie</label>
-            <input type="checkbox" id="romantiek" name="genre">
-            <label for="romantiek">Romantiek</label>
-            <input type="checkbox" id="komedie" name="genre">
-            <label for="komedie">komedie</label>
-        </div>
-        <div class="centertext">
-            <input type="text" placeholder="Regisseur">
-        </div>
-        <div class="centertext">
-            <input type="number" placeholder="publicatiejaar">
-        </div>
-        <div class="centertext">
-            <input type="text" placeholder="Zoeken naar titel">
-        </div>
-
-        <div class="centertext link">
-            <a class="buttonlink" href="filmoverzicht.html">Zoeken</a>
-        </div>
-
-        <div class="centertext link">
-            <a class="buttonlink" href="filmoverzicht.html">BACK</a>
-        </div>
-    </main>
-</body>
-
-</html>

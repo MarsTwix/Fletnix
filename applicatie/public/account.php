@@ -15,7 +15,7 @@
 <html>
 
 <head>
-    <title>Fletnix - Email wijzigen</title>
+    <title>Fletnix - Account detail</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" href="img/logo.png">
@@ -24,11 +24,9 @@
 
 <body class="filmbg bg">
     <nav class="back">
-        <a class="buttonlink" href="accountdetail.html">BACK</a>
+        <a class="buttonlink" href="filmoverzicht.html">BACK</a>
     </nav>
 
-    <main class="center-screen filmbg bg">
-        <h2 class="centertext">Email wijzigen</h2>
 
         <form action="databaseUsersTest.php" method="post">
         <input name="newMail" type="text" placeholder="Email">
