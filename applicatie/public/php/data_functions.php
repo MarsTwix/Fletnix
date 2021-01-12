@@ -117,11 +117,11 @@ function alterUserData($Item, $user,  $newItem)
 {
     global $dbh;
 
-    $sql = "UPDATE Customer SET :Item = :newItem where customer_mail_address = :email";
+    $sql = "UPDATE Customer SET firstname = :newItem where customer_mail_address = :email";
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":Item" => $Item, ":email" => $user, ":newItem" => $newItem));
+    $query->execute(array(":email" => $user, ":newItem" => $newItem));
 
     return;
 }
