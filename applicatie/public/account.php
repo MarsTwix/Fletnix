@@ -1,5 +1,4 @@
 <?php
-
     require_once "php/data_functions.php";
     session_start();
     $customer = getCustomerData($_SESSION['email']);
