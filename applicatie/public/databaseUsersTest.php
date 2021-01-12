@@ -79,7 +79,7 @@ if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
     break;
     case "firstName":
     $html = "Poging tot wijziging naam";
-    alterUserData("firstname", $SESSION['email'], $_POST['newData']);
+    alterUserData("firstname", $_POST['Testemail'], $_POST['newData']);
     break;
     default:
     $html = "Geen keuze gemaakt";

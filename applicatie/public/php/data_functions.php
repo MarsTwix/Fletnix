@@ -120,7 +120,7 @@ function alterUserData($item, $email, $newItem) {
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":email" => $user, ":newItem" => $newItem));
+    $query->execute(array(":email" => $email, ":newItem" => $newItem));
 
     return;
 }
