@@ -1,5 +1,7 @@
 <?php
-    
+    require_once "php/data_functions.php";
+    session_start();
+    $customer = getCustomerData($_SESSION['email']);
 ?>
 
 <!doctype html>
@@ -7,7 +9,7 @@
 <html>
 
 <head>
-    <title>Fletnix - Email wijzigen</title>
+    <title>Fletnix - Account detail</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" href="img/logo.png">
@@ -16,16 +18,21 @@
 
 <body class="filmbg bg">
     <nav class="back">
-        <a class="buttonlink" href="accountdetail.html">BACK</a>
+        <a class="buttonlink" href="filmoverzicht.html">BACK</a>
     </nav>
 
-    <main class="center-screen filmbg bg">
-        <h2 class="centertext">Email wijzigen</h2>
 
-        <input type="email" placeholder="Email">
-        <input type="email" placeholder="Email opnieuw">
-        <a class="buttonlink" href = "accountdetail.html">wijzigen</a>
-        
+    <main class="account">
+        <div class="centertext">
+            <?=$customer['customer_mail_address']?>
+            </div>
+            <div class="centertext link">
+            <a class="buttonlink" href="account.html" >Email wijzigen</a>
+            </div>
+            <div class="centertext link">
+            <a class="buttonlink" href="Wachtwoord_wijzigen.html" >Wachtwoord wijzigen</a>
+        </div>
+
     </main>
 </body>
 

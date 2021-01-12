@@ -66,10 +66,10 @@ function getPaymentMethods(){
 }
 
 function getGenres(){
-    $data = getAllData('Payment');
+    $data = getAllData('genre');
     $genre = [];
     foreach($data as $item){
-        $genre[]=$item[0];
+        $genre[]=$item;
     }
     return $genre;
 }
