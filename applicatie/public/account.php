@@ -17,7 +17,7 @@
 </head>
 <body class="filmbg bg">
     <nav class="back">
-<a class="buttonlink" href="filmoverzicht.html">BACK</a>
+<a class="buttonlink" href="filmoverzicht.php">BACK</a>
     </nav>
 <main class="account">
         <div class="centertext">

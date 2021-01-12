@@ -20,13 +20,13 @@ require_once 'php/data_functions.php';
     <nav>
         <h1 class="centertext">FLETNIX</h1>
         <a class="buttonlink" href = "pages.php" >Alle Pagina's</a>
-        <a class="buttonlink" href = "filter.html">Zoeken</a>
+        <a class="buttonlink" href = "filter.php">Zoeken</a>
         <?= $accountButton?>
     </nav>
 
   <h2 class="back">Aanbevolen voor jou!</h2>
     <div class="lego_movie back">
-        <a href="Film_pagina.html"> <img src="img/Lego.jpg"  height="180"> </a>
+        <a href="Filmafspelen.php"> <img src="img/Lego.jpg"  height="180"> </a>
     </div>
     <div>
         <h3 class="back">Nieuwste Films </h3>

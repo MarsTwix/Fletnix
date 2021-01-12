@@ -280,3 +280,9 @@ margin: 0 20px;
 .movieDiscription {
     grid-area: Discript;
 }
+
+.wit{
+color: white;
+font-family: Avenir Roman,sans-serif;
+font-size: 18px;
+}

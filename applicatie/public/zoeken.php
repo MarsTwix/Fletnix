@@ -56,7 +56,7 @@
         
 
         <div class="centertext link">
-            <a class="buttonlink" href="filmoverzicht.html">BACK</a>
+            <a class="buttonlink" href="filmoverzicht.php">BACK</a>
         </div>
     </main>
 </body>

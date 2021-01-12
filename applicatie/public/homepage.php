@@ -13,7 +13,7 @@
     <nav>
         <h1 id="fletnix" >FLETNIX</h1>
         <a class="buttonlink" href = "over_ons.php">OVER ONS</a>
-        <a class="buttonlink" href = "filmoverzicht_preview.html">PREVIEW</a>
+        <a class="buttonlink" href = "filmoverzicht_preview.php">PREVIEW</a>
         <a class="buttonlink" href = "login.php">INLOGGEN</a>
     </nav>
 

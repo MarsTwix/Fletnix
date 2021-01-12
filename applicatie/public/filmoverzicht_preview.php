@@ -14,13 +14,13 @@
         <h1 id="fletnix">FLETNIX</h1>
 
         <a class="buttonlink" id="homebtn" href="homepage.php">HOME</a>
-        <a class="buttonlink" id="previewbtn" href = "abonnementen.html">ABONNEREN</a>
+        <a class="buttonlink" id="previewbtn" href = "abonnementen.php">ABONNEREN</a>
         <a id="login" class="buttonlink" href="Login.php">INLOGGEN</a>
     </nav>
 
     <h2>Aanbevolen voor jou!</h2>
     <div class="lego_movie">
-        <a href="abonnementen.html"> <img src="img/Lego.jpg"  height="180"> </a>
+        <a href="abonnementen.php"> <img src="img/Lego.jpg"  height="180"> </a>
     </div>
     <div>
         <h3>Nieuwste Films </h3>

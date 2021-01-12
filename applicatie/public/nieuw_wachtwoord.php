@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Fletnix - Wachtwoord vergeten code</title>
+    <title>Fletnix - Nieuw wachtwoord</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" href="img/logo.png">
@@ -11,22 +11,25 @@
 </head>
 <body class = 'bg loginImg'>
     <header>
-        <a href="homepage.php"> <img class = "logo" src="img/logo.png" alt=""> </a>
+        <a href="homepage.php"> <img class = "logo" src="img/logo.png" alt="film"> </a>
     </header>
 
     <main class="login blackbg">
-        <h2 class="centertext">Code</h2>
+        <h2 class="centertext">Nieuw wachtwoord</h2>
         <div class="centertext">
-            <input type="text" placeholder="Code">
+            <input type="password" placeholder="Wachtwoord">
+        </div>
+        <div class="centertext">
+            <input type="password" placeholder="Wachtwoord opnieuw">
         </div>
         <div class="centertext link">
-            <a href = "login.html">Login</a>
+            <a href = "login.php">Login</a>
         </div>
         <div class="centertext link">
-            <a href = "registreren.html">Registreren</a>
+            <a href = "registreren.php">Registreren</a>
         </div>
         <div class="centertext link">
-            <a class="buttonlink" href = "nieuw_wachtwoord.html">Verder</a>
+            <a class="buttonlink" href = "Login.php">Verzenden</a>
         </div>
     </main>
 </body>
