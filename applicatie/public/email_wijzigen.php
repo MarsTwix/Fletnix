@@ -33,7 +33,7 @@ $html = "<h3>mail ingevoerd</h3>";
 
 <body class="filmbg bg">
     <nav class="back">
-        <a class="buttonlink" href="filmoverzicht.html">BACK</a>
+        <a class="buttonlink" href="account.php">BACK</a>
     </nav>
 
 
@@ -41,7 +41,7 @@ $html = "<h3>mail ingevoerd</h3>";
         <input name="newMail" type="text" placeholder="Email">
         <input name="newMail2" type="text" placeholder="Email opnieuw">
         <input type="submit">
-        <a class="buttonlink" href = "accountdetail.html">wijzigen</a>
+        <a class="buttonlink" href = "account.php">wijzigen</a>
         </form>
 
 <?=$html?>
