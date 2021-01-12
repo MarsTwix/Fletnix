@@ -251,3 +251,32 @@ margin: 0 20px;
     border-radius: 5px; 
     text-align: center;
 }
+
+
+.videoPlayerGrid {
+    background-color:rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    display: grid;
+    grid-template-areas: 'Title Title Title Title' 'Player Player Player Info' 'Player Player Player Info' 'Discript Discript Discript Distcrip';
+    align-content: center;
+    height: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.moviePlayer {
+    grid-area: Player;
+}
+
+.movieTitle {
+    grid-area: Title;
+}
+
+.movieInfo {
+    grid-area: Info;
+}
+
+.movieDiscription {
+    grid-area: Discript;
+}

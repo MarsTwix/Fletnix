@@ -1,5 +1,7 @@
 <?php
  require_once "php/data_functions.php";
+
+ 
     $htmlCountries='';
     $countries = getCountries();
     $htmlCountries .= '<select name="country" id="country">';
