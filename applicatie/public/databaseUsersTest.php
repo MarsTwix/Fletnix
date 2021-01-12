@@ -61,7 +61,7 @@ if (empty($Testemail) || empty($Testpassword)) {
 if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
     if ($_POST['newData'] = $_POST['dataConfirm']) {
         $html = "Input gelijk";
-        
+
         switch ($_POST['update']) {
     case "email":
     $html = "Poging tot wijziging e-mail";
@@ -81,7 +81,6 @@ if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
     $html = "Poging tot wijziging naam";
     alterUserData("firstname", $SESSION['email'], $_POST['newData']);
     break;
-
     default:
     $html = "Geen keuze gemaakt";
     break;
