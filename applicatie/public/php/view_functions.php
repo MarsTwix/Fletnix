@@ -1,15 +1,22 @@
 <?php
 require_once "php/data_functions.php";
 
-function filmsNaarHTMl($films) {
+function filterNaarHTML($films) {
     global $dbh;
     $html = '';
     foreach ($films as $film) {
       $uur = floor(intval($film['duration']) / 60);
       $min = intval($film['duration']) - 60;
       $html .= "<h2>" . $film['title'] . "</h2>";
-      $html .= "<p>Lengte: {$uur}:{$min} </p>";
-      $html .= "<img src={$film['cover_image']} height='180'>";
+      if($film['cover_image'] == null)
+      {
+        $html .= "<img src='../img/image-not-available.jpg' height='180'>";
+      } 
+      else{
+        $html .= "<img src={$film['cover_image']} height='180'>";
+      }
+      $html .= "<p>Lengte: {$uur} uur en {$min} min </p>";
+      
     }
     return $html;
 }
