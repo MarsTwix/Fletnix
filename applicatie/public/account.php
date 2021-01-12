@@ -28,7 +28,7 @@
             <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
             </div>
             <div class="centertext link">
-            <a class="buttonlink" href="Wachtwoord_wijzigen.html" >Wachtwoord wijzigen</a>
+            <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
         </div>
 
     </main>
