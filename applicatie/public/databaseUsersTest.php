@@ -4,6 +4,8 @@ require_once 'php/simple_functions.php';
 
 session_start();
 
+$html = "Geen wijziging uitgevoerd.";
+
 $SubscriptionEndDate = 0;
 
 $testresult = "Nog geen Email & Wachtwoord ingevoerd";
@@ -55,9 +57,34 @@ if (empty($Testemail) || empty($Testpassword)) {
     }
 };
 
+
 if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
     if ($_POST['newData'] = $_POST['dataConfirm']) {
-        $html = "Intput gelijk";
+        $html = "Input gelijk";
+
+        switch ($_POST['update']) {
+    case "email":
+    $html = "Poging tot wijziging e-mail";
+    if (!compareEmail($_POST['newData'])) {
+        alterUserData("customer_mail_address", $SESSION['email'], $_POST['newData']);
+        $html = "Email succesvol aangepast.";
+    }
+    break;
+
+    case "password":
+    $html = "Poging tot wijziging wachtwoord";
+    break;
+    case "endDate":
+    $html = "Poging tot wijziging datum";
+    break;
+    case "firstName":
+    $html = "Poging tot wijziging naam";
+    alterUserData("firstname", $SESSION['email'], $_POST['newData']);
+    break;
+    default:
+    $html = "Geen keuze gemaakt";
+    break;
+    }
     } else {
         $html = "Input is niet gelijk";
     }
@@ -91,25 +118,20 @@ if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
 E-mail <input type="text" name="Testemail"><br>
 Password <input type="password" name="Testpassword"><br>
 
-<input type="submit">
-</form>
-
 <h3>Werkende Login</h3>
 <p>a.nunc@sitamet.com<br>nunc</p>
 
 <h3>Wijziging Database gegevens</h3>
-<form action="databaseUsersTest.php" method="post">
 <select name="update">
   <option value="email">Email</option>
   <option value="password">Wachtwoord</option>
   <option value="endDate">Eind Datum</option>
-  <option value="firstname">Firstname</option>
+  <option value="firstName">Firstname</option>
 </select><br>
 Nieuw gegeven <input type="text" name="newData"><br>
 Bevestig nieuw gegeven <input type="text" name="dataConfirm"><br>
 <input type="submit">
 </form>
-
 <?=$html?>
 
 </body>

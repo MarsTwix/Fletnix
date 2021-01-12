@@ -136,7 +136,8 @@ function getAllData($table){
     return $data;
 }
 
-function getContractData(){
+function getContractData()
+{
     global $dbh;
 
     $query = $dbh->query("SELECT * FROM Contract");
@@ -155,5 +156,3 @@ function getCustomerData($email){
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
     return $data[0];
 }
-
-?>
