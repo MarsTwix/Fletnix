@@ -55,9 +55,12 @@ if (empty($Testemail) || empty($Testpassword)) {
     }
 };
 
-if($_POST['newData'] = $_POST['dataConfirm']) {
-echo "is gelijk";
-
+if (!empty($_POST['newData']) && !empty($_POST['dataConfirm'])) {
+    if ($_POST['newData'] = $_POST['dataConfirm']) {
+        $html = "Intput gelijk";
+    } else {
+        $html = "Input is niet gelijk";
+    }
 }
 
 
@@ -102,13 +105,12 @@ Password <input type="password" name="Testpassword"><br>
   <option value="endDate">Eind Datum</option>
   <option value="firstname">Firstname</option>
 </select><br>
-
 Nieuw gegeven <input type="text" name="newData"><br>
 Bevestig nieuw gegeven <input type="text" name="dataConfirm"><br>
-
-
 <input type="submit">
 </form>
+
+<?=$html?>
 
 </body>
 
