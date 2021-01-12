@@ -82,3 +82,15 @@ function getContracts(){
 function getPrice(){
     return contractDataByIndex(1);
 }
+
+function getSelectedGenres(){
+    $genres = getGenres();
+    $selectedGenres = [];
+
+    foreach($genres as $genre){
+        if(isset($_GET[$genre])){
+            $selectedGenres[]=$genre;
+        }
+    }
+    return $selectedGenres;
+}

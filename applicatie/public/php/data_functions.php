@@ -156,3 +156,67 @@ function getCustomerData($email){
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
     return $data[0];
 }
+
+function searchMovies($selectedGenres, $director, $year, $title){
+
+    $lastWhere = false;
+    $execute =[];
+
+    $sql ='SELECT top 10 * FROM Movie';
+
+    if(!empty($selectedGenres)){
+        $sql .= " WHERE movie_id IN (SELECT movie_id FROM Movie_Genre WHERE";
+        foreach($selectedGenres as $genre){
+            if($selectedGenres[sizeof($selectedGenres)-1] == $genre)
+            {
+                $sql .= " genre_name = '$genre')";
+            }
+            else{
+             $sql .= " genre_name = '$genre' OR";
+            }
+        }
+        $lastWhere = true;
+    }
+
+    if(!empty($director)){
+        if($lastWhere){
+            $sql .= " AND";
+        }
+        else{
+            $sql .= " WHERE";
+        }
+        $sql .= " movie_id IN (SELECT md.movie_id FROM Movie_Director AS md INNER JOIN Person AS p ON md.person_id = p.person_id WHERE firstname + ' ' + lastname like ?)";
+        $lastWhere = true;
+        $execute[] = "%$director}%";
+    }
+
+    if(!empty($year)){
+        if($lastWhere){
+            $sql .= " AND";
+        }
+        else{
+            $sql .= " WHERE";
+        }
+        $sql .= " publication_year = ?";
+        $lastWhere = true;
+        $execute[] = "{$year}";
+    }
+
+    if(!empty($title)){
+        if($lastWhere){
+            $sql .= " AND";
+        }
+        else{
+            $sql .= " WHERE";
+        }
+        $sql .= " title like ?";
+        $lastWhere = true;
+        $execute[] = "%{$title}%";
+    }
+
+    global $dbh;
+    $query = $dbh->prepare($sql);
+    $query->execute($execute);
+    $data = $query->fetchAll();
+    return $data;
+}
