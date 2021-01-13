@@ -221,22 +221,20 @@ function searchMovies($selectedGenres, $director, $year, $title){
     return $data;
 }
 
-function hashDatabasePW($activate) {
-if($activate) {
+function getAllPassword() {
     global $dbh;
 
-    $sql = "UPDATE Customer SET password = :newItem where customer_mail_address = :email";
+    $sql = "SELECT password FROM Customer";
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":email" => $email, ":newItem" => $newItem));
+    $query->execute(array());
 
-    return;
+    $returnvalue = $query->fetchAll();
 
-
-
-
-}
-
-
+    if (empty($returnvalue)) {
+        return null;
+    } else {
+        return $returnvalue[0]['password'];
+    }
 }
