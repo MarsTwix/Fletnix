@@ -1,3 +1,19 @@
+<?php
+    require_once 'php/data_functions.php';
+    require_once 'php/view_functions.php';
+    
+    $title = $_GET['movie'];
+    $id = getMovieID($title);
+    $duration = getMovieInfo($id, 'duration');
+    $description = getMovieInfo($id, 'description');
+    $year = getMovieInfo($id, 'publication_year');
+    $url = getMovieInfo($id, 'URL');
+    $genres = getMovieGenres($id);
+    $directors = getMovieDirectors($id);
+    $casts = getMovieCasts($id);
+    $roles = getCastsRoles($id);
+    $html = filmAfspelenToHTML($title, $duration, $description, $year, $url, $genres, $directors, $casts, $roles);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,46 +29,7 @@
     <nav class="back">
         <a class="buttonlink" href="filmoverzicht.php">BACK</a>
     </nav>
-        <div class="videoPlayerGrid">
-
-            <div class="moviePlayer">
-
-                <video src="img/legoM.mp4" preload="auto" width="100%" height="100%" controls>
-                <p>Browser update vereist voor weergave</p>
-            </video>
-
-            </div>
-            <div class="movieTitle">
-                <h1> The lego movie</h1>
-                <h3>Full movie</h3>
-            </div>
-            <div class="movieInfo">
-               <div class="wit" >
-                   <ul>
-                    <li>Speelduur: 100 minuten</li>
-                    <li>Hoofdpersonen:
-                        <ul>
-                            <li>Morgan Freeman</li>
-                            <li>Chris Pratt</li>
-                            <li>Alison Brie</li>
-                        </ul>
-                    </li>
-                    <li>Genre: Animatie/Actie</li>
-                    <li>Regiseur: Sjaak</li>
-                    <li>Release: 2014 </li>
-                </ul>
-                </div>
-            </div>
-            <div class="movieDiscription">
-                <h3>Korte Samenvatting, Spoiler Warning!</h3>
-                <p> Emmet, een doodnormaal Lego-figuurtje, wordt ten onrechte aangezien als de meest bijzondere persoon,
-            en degene die de sleutel is tot het redden van de wereld.</p>
-                <p>  Hij wordt meegezogen in een gemeenschap van vreemdelingen op een epische zoektocht naar een kwaadaardige
-            tiran.</p>
-            
-            </div>
-        </div>
-
+    <?=$html?>
 </body>
 
 </html>

@@ -55,7 +55,7 @@
 <html>
 
 <head>
-    <title>Fletnix - Filteren</title>
+    <title>Fletnix - Zoeken</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" href="img/logo.png">

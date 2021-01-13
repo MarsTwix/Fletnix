@@ -20,7 +20,7 @@ require_once 'php/data_functions.php';
     <nav>
         <h1 class="centertext">FLETNIX</h1>
         <a class="buttonlink" href = "pages.php" >Alle Pagina's</a>
-        <a class="buttonlink" href = "filter.php">Zoeken</a>
+        <a class="buttonlink" href = "zoeken.php">Zoeken</a>
         <?= $accountButton?>
     </nav>
 

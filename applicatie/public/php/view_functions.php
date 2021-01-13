@@ -5,32 +5,27 @@ function filterToHTML($films) {
     global $dbh;
     $resultaten = sizeof($films);
     $html ='';
-    $html.= "<a class='buttonlink' href='zoeken.php'>BACK</a>";
-    $html .=  "$resultaten resultaten";
-    if($_SESSION['page']*10 > sizeof($films)-1){
+    if($_SESSION['page']*50 > sizeof($films)-1){
       $max = sizeof($films);
     }
     else{
-      $max = $_SESSION['page']*10;
+      $max = $_SESSION['page']*50;
     }
-    for ($i = ($_SESSION['page']-1)*10; $i < $max ; $i++) {
+    for ($i = ($_SESSION['page']-1)*50; $i < $max ; $i++) {
       $uur = floor(intval($films[$i]['duration']) / 60);
       $min = intval($films[$i]['duration']) - 60;
-      
-      $html .= "<h2>" . $films[$i]['title'] . "</h2>";
+      $html .= "<a href = 'Filmafspelen.php?movie={$films[$i]['title']}' class ='centertext blackbg filter'>";
+      $html .= "<h3 class = 'centertext'>" . $films[$i]['title'] . "</h3>";
       if($films[$i]['cover_image'] == null)
       {
-        $html .= "<img src='../img/image-not-available.jpg' height='180'>";
+        $html .= "<img src='../img/image-not-available.jpg' width='100'>";
       } 
       else{
-        $html .= "<img src={$films[$i]['cover_image']} height='180'>";
+        $html .= "<img src='../img/{$films[$i]['cover_image']}' width='100'>";
       }
       $html .= "<p>Lengte: {$uur} uur en {$min} min </p>";
+      $html .= '</a>';
     }
-    $html .= "<form class='centertext' action='filter.php' method='post'>";
-    $html .= "<input class = 'buttonlink' type='submit' name='page' value='Vorige'>";
-    $html .= "<input class = 'buttonlink' type='submit' name='page' value='Volgende'>";
-    $html .= "</form>";
     return $html;
 }
 
@@ -95,5 +90,45 @@ function errorMSG($error){
     $html .= "<p>$error</p>";
     $html .= "</div>";
     return $html;
+}
+
+function filmAfspelenToHTML($title, $duration, $description, $year, $url, $genres, $directors, $casts, $roles){
+  $uur = floor(intval($duration) / 60);
+  $min = intval($duration) - 60;
+  $html = '';
+  $html .= '<div class="videoPlayerGrid"> <div class="moviePlayer">';
+  $html .= "<video src='img/$url' preload='auto' width='100%'' height='100%'' controls></video>";
+  $html .= '</div> <div class="movieTitle">';
+  $html .= "<h1>$title</h1>";
+  $html .= '<h3>Full movie</h3> </div><div class="movieInfo"> <div class="wit" > <ul>';
+  $html .= "<li>Speelduur: {$uur} uur en {$min} min</li>";
+  $html.='<li>Genre: ';
+  for($i = 0; $i < sizeof($genres); $i++){
+    if($i == sizeof($genres)-1){
+      $html .= "{$genres[$i]}";
+    }
+    else{
+      $html .= "{$genres[$i]}/";
+    }
+  }
+  $html.="<li>Release: $year</li>";
+  $html .= '<li>Hoofdpersonen: <ul>';
+  for($i = 0; $i < sizeof($casts); $i++){
+    $html .= "<li>{$casts[$i]}";
+    if(!empty($roles[$i])){
+      $html .= " {$roles[$i]}";
+    }
+    $html .= '</li>';
+  }
+  $html .= '</ul>';
+  $html .= '<li>Regiseurs: <ul>';
+  foreach($directors as $director){
+    $html .= "<li>$director";
+    $html .= '</li>';
+  }
+  $html .= '</ul></ul></div></div><div class="movieDiscription"><h3>Korte Samenvatting, Spoiler Warning!</h3>';
+  $html .= "<p>$description</p>";
+  $html .= '</div></div>';
+  return $html;
 }
 ?>

@@ -252,3 +252,62 @@ function hashDatabasePW($email, $password) {
 
     return;
 }
+
+function getMovieID($name){
+    global $dbh;
+    $query = $dbh->query("SELECT movie_id FROM Movie Where title = '$name'");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+
+    return $data[0][0];
+}
+
+function getMovieInfo($id, $info){
+    global $dbh;
+    $query = $dbh->query("SELECT $info FROM Movie Where movie_id = $id");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    return $data[0][0];
+}
+
+function getMovieGenres($id){
+    global $dbh;
+    $query = $dbh->query("SELECT genre_name FROM Movie_Genre Where movie_id = $id");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    $genres = [];
+    foreach($data as $genre){
+        $genres[] = $genre[0];
+    }
+    return $genres;
+}
+
+function getMovieDirectors($id){
+    global $dbh;
+    $query = $dbh->query("SELECT firstname, lastname FROM Person Where person_id in(select person_id from Movie_Director where movie_id = $id)");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    $directors = [];
+    foreach($data as $director){
+        $directors[] = $director[0] . ' ' . $director[1];
+    }
+    return $directors;
+}
+
+function getMovieCasts($id){
+    global $dbh;
+    $query = $dbh->query("SELECT firstname, lastname FROM Person Where person_id in(select person_id from Movie_Cast where movie_id = $id)");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    $casts = [];
+    foreach($data as $cast){
+        $casts[] = $cast[0] . ' ' . $cast[1];
+    }
+    return $casts;
+}
+
+function getCastsRoles($id){
+    global $dbh;
+    $query = $dbh->query("SELECT role FROM Movie_Cast Where movie_id = $id");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    $roles = [];
+    foreach($data as $role){
+        $roles[] = $role[0];
+    }
+    return $roles;
+}
