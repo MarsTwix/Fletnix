@@ -12,9 +12,7 @@ $passwords = getAllPassword();
 
 foreach($passwords AS $password) {
     echo $password[1];
-   // if(strlen($password[1]) >= 15) {
         hashDatabasePW($password[0], $password[1]);
-    //}
     echo "<br>";
 }
 
