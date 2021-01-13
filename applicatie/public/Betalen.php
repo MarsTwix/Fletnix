@@ -31,7 +31,7 @@ var_dump($_POST['userMail']);
 
 if (!empty($_POST['userPassword']) && !empty($_POST['userPassword2'])) {
     if ($_POST['userPassword'] = $_POST['userPassword2']) {
-        $_SESSION['userPassword'] = $_POST['userPassword'];
+        $_SESSION['userPassword'] = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
     } else {
         header("Location: registreren.php");
     }

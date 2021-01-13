@@ -225,7 +225,7 @@ function hashDatabasePW($activate) {
 if($activate) {
     global $dbh;
 
-    $sql = "UPDATE Customer SET $item = :newItem where customer_mail_address = :email";
+    $sql = "UPDATE Customer SET password = :newItem where customer_mail_address = :email";
 
     $query = $dbh->prepare($sql);
 
