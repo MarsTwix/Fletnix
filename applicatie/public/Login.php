@@ -87,10 +87,6 @@ if (empty($_POST['Inloggen'])) {
             <div class="centertext">
                 <input type="password" placeholder="Wachtwoord" name="password">
             </div>
-        
-            <div class="centertext link ">
-                <a href = "wachtwoord_vergeten.php">Wachtwoord vergeten</a>
-            </div>
             
             <div class="centertext link ">
                 <a href = "registreren.php">Registreren</a>
