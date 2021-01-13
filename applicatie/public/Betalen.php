@@ -45,6 +45,17 @@ if (!empty($_POST['username'])) {
 
 $_SESSION['userId'] = "newUser";
 
+if(!empty($_POST['abonnement'])) {
+    $_SESSION['userContract'] = $_POST['abonnement'];
+}
+
+if(!empty())
+
+
+
+
+
+
 
 ?>
 
