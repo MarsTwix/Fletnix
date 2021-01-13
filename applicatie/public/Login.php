@@ -8,7 +8,6 @@ session_start();
 if (!empty($_POST['userPayment'])) {
     if (compareEmail($_SESSION['userEmail'])) {
         addUser($_SESSION['userEmail'], $_SESSION['userPassword'], $_SESSION['userFirstname'], $_SESSION['username'], $_SESSION['userContract'], $_POST['payment_method'], $_POST['userPayment'], $_SESSION['geslacht']);
-        echo "test geslaagd";
     }
 }
 
