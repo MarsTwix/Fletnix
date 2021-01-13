@@ -99,7 +99,7 @@ function getSubscibDate($email)
     }
 }
 
-function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNumber, $country, $gender, $date)
+function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNumber, $country, $gender)
 {
     global $dbh;
 
