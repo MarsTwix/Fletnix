@@ -1,5 +1,6 @@
 <?php
     require_once 'php/simple_functions.php';
+    require_once 'php/view_functions.php';
     session_start();
     $_SESSION['page'] = 1;
     $_SESSION['regisseur'] = null;
@@ -19,6 +20,33 @@
             $htmlGenre .= "</div>";
             $i = 0;
         }
+    }
+
+    $empty = true;
+    if(!empty($_GET['regisseur'])){
+        $_SESSION['regisseur'] = $_GET['regisseur'];
+        $empty = false;
+    }
+    if(!empty($_GET['publicatiejaar'])){
+        $_SESSION['publicatiejaar'] = $_GET['publicatiejaar'];
+        $empty = false;
+    }
+    if(!empty($_GET['titel'])){
+        $_SESSION['titel'] = $_GET['titel'];
+        $empty = false;
+    }
+    $_SESSION['genres'] = getSelectedGenres();
+    if(!empty($_SESSION['genres'])){
+        $empty = false;
+    }
+    if(empty($_GET['zoeken'])){    
+        $htmlError = '';
+    }
+    elseif($empty){
+        $htmlError = errorMSG("Vul iets in of klik iets aan!");
+    }
+    else{
+        header('location: filter.php');
     }
 ?>
 
@@ -40,8 +68,9 @@
         <div class="centertext">
             <h1>Filteren</h1>
         </div>
-        <form action="filter.php" methode = "GET">
+        <form action="zoeken.php" methode = "GET">
             <div class="centertext">
+            <?=$htmlError?>
                 <h2>Genre:</h2>
             </div>
             <?= $htmlGenre?>

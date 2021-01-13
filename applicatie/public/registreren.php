@@ -1,7 +1,10 @@
 <?php
  require_once "php/data_functions.php";
 
- 
+    session_start();
+    if(empty($_SESSION['error'])){
+        $_SESSION['error'] = null;
+    }
     $htmlCountries='';
     $countries = getCountries();
     $htmlCountries .= '<select name="country" id="country">';
@@ -26,16 +29,8 @@
         }
         $htmlContracts.="</label>";
     }
-
-
-
-
-
-
-
-
-
-
+    $error = $_SESSION['error'];
+    var_dump($error);
 ?>
 
 <!DOCTYPE html>
@@ -57,40 +52,45 @@
     </header>
 
     <main class="registreren blackbg">
+    <?php
+        if(!empty($_SESSION['error'])){
+            echo $_SESSION['error'];
+        }
+    ?>
         <h2 class="centertext">Registreren</h2>
         <div class="centertext">
 
         <form action="Betalen.php" method="post">
-        <input type="radio" id="man" name="geslacht" value="M" checked="checked">
-            <label for="man">De heer</label>
-            <input type="radio" id="vrouw" name="geslacht" value="F">
-            <label for="F">Mevrouw</label>
-        </div>
-        <div class="centertext">
-            <input required name="userFirstname" type="text" placeholder="Voornaam" >
-            <input type="text" placeholder="tussenv.">
-            <input required name="userName" type="text" placeholder="Achternaam">
-        </div>
-        <div class="centertext">
-            <?=$htmlCountries?>
-        </div>
-        <div class="centertext">
-            <input required name="userMail" type="text" placeholder="E-mail">
-        </div>
-        <div class="centertext">
-            <input required type="password" name="userPassword" placeholder="Wachtwoord">
-            <input required type="password" name="userPassword2" placeholder="Wachtwoord herhalen">
-        </div>
-        <div class="centertext">
-            <h3><a href="abonnementen.php">Abonnementen:</a></h3>
-            <?=$htmlContracts?>
-        </div>
-        <div class="centertext link">
-        <a class = "login" href="Login.php">Al een account? Hier kan je inloggen!</a>
-    </div>
-        <div class="centertext link">
-            <input type="submit" class="buttonlink">
-        </div>
+            <input type="radio" id="man" name="geslacht" value="M" checked="checked">
+                <label for="man">De heer</label>
+                <input type="radio" id="vrouw" name="geslacht" value="F">
+                <label for="F">Mevrouw</label>
+            </div>
+            <div class="centertext">
+                <input required name="userFirstname" type="text" placeholder="Voornaam" >
+                <input name='userMiddlename' type="text" placeholder="tussenv.">
+                <input required name="userLastname" type="text" placeholder="Achternaam">
+            </div>
+            <div class="centertext">
+                <?=$htmlCountries?>
+            </div>
+            <div class="centertext">
+                <input required name="userMail" type="email" placeholder="E-mail">
+            </div>
+            <div class="centertext">
+                <input required type="password" name="userPassword" placeholder="Wachtwoord">
+                <input required type="password" name="userPassword2" placeholder="Wachtwoord herhalen">
+            </div>
+            <div class="centertext">
+                <h3><a href="abonnementen.php">Abonnementen:</a></h3>
+                <?=$htmlContracts?>
+            </div>
+            <div class="centertext link">
+                <a class = "login" href="Login.php">Al een account? Hier kan je inloggen!</a>
+            </div>
+            <div class="centertext">
+                <input type="submit" class="buttonlink" value ='Betalen'>
+            </div>
         </form>
     </main>
 

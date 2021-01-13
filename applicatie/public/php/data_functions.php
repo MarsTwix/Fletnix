@@ -59,7 +59,7 @@ function checkEmail($email)
     $query->execute(array(":email" => $email));
     $returnvalue = $query->fetchAll();
     if (empty($returnvalue)) {
-        return null;
+        return;
     } else {
         return $returnvalue[0]['customer_mail_address'];
     }
@@ -99,16 +99,16 @@ function getSubscibDate($email)
     }
 }
 
-function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNumber, $gender)
+function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNumber, $country, $gender)
 {
     global $dbh;
 
-    $sql = "INSERT INTO Customer (customer_mail_address, lastname, firstname, password, user_name, contract_type, payment_method, payment_card_number, country_name, subscription_start, gender, birth_date)
-    VALUES (:email, :firstname, :lastname, :password, 'newUser', :type, :card, :cardNumber, 'Netherlands', GETDATE(), :gender, GETDATE())";
+    $sql = "INSERT INTO Customer (customer_mail_address, firstname, lastname, password, user_name, contract_type, payment_method, payment_card_number, country_name, subscription_start, gender, birth_date)
+    VALUES (:email, :firstname, :lastname, :password, 'newUser', :type, :card, :cardNumber, :country, GETDATE(), :gender, GETDATE())";
 
     $query = $dbh->prepare($sql);
 
-    $query->execute(array(":email" => $email, ':password' => $password, ':firstname' => $firstname, ':lastname' => $lastname, ':type' => $type, ':card' => $card, ':cardNumber' => $cardNumber, ':gender' => $gender));
+    $query->execute(array(":email" => $email, ':password' => $password, ':firstname' => $firstname, ':lastname' => $lastname, ':type' => $type, ':card' => $card, ':cardNumber' => $cardNumber, 'country' => $country, ':gender' => $gender));
 
     return;
 }

@@ -16,7 +16,7 @@ function checkPassword($inputpassword, $email)
 {
     $password = getPassword($email);
     
-    if ($password == $inputpassword) {
+    if (password_verify($inputpassword, $password)) {
         return true;
     }
     return false;

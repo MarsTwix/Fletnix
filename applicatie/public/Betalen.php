@@ -1,6 +1,7 @@
 <?php
     require_once 'php/simple_functions.php';
-session_start();
+    require_once 'php/view_functions.php';
+    session_start();
 
     $htmlPayment='';
     $paymentMethods = getPaymentMethods();
@@ -9,47 +10,62 @@ session_start();
         $htmlPayment .= "<option value=$paymentMethod>$paymentMethod</option>";
     }
     $htmlPayment .= '</select>';
-
-
-if($_POST['geslacht'] = "man") {
-    $_SESSION['geslacht'] = "M";
-} else {
-    $_SESSION['geslacht'] = "F";
-}
-
-$_SESSION['land'] = "Netherlands";
-
-if (!empty($_POST['userMail'])) {
-    if (!checkEmail($_POST['userMail'])) {
-        $_SESSION['userEmail'] = $_POST['userMail'];
-    } else {
-        header("Location: registreren.php");
+    if (!empty($_POST['userPassword']) && !empty($_POST['userPassword2'])) {
+        if ($_POST['userPassword'] == $_POST['userPassword2']) {
+            $_SESSION['userPassword'] = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
+        } else {
+            $_SESSION['error'] = errorMSG('Wachtwoorden zijn niet hetzelfde!');
+            header("Location: registreren.php");
+        }
     }
-}
+    
 
-var_dump($_POST['userMail']);
-
-if (!empty($_POST['userPassword']) && !empty($_POST['userPassword2'])) {
-    if ($_POST['userPassword'] = $_POST['userPassword2']) {
-        $_SESSION['userPassword'] = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
-    } else {
-        header("Location: registreren.php");
+    if (!empty($_POST['userMail'])){
+        if(compareEmail($_POST['userMail'])) {   
+            $_SESSION['error'] = errorMSG('Email al in gebruik!');
+            header("Location: registreren.php");
+        }
+        else{
+            $_SESSION['userMail'] = $_POST['userMail'];
+        }
     }
-}
 
-if (!empty($_POST['userFirstname'])) {
-$_SESSION['userFirstname'] = $_POST['userFirstname'];
-}
+    if (!empty($_POST['userFirstname'])) {
+        $_SESSION['userFirstname'] = $_POST['userFirstname'];
+    }
 
-if (!empty($_POST['userName'])) {
-    $_SESSION['username'] = $_POST['userName'];
-}
-
-$_SESSION['userId'] = "newUser";
-
+    if (!empty($_POST['userLastname'])) {
+        if(!empty($_POST['userMiddlename'])){
+            $_SESSION['userLastname'] = $_POST['userMiddlename'] . ' ' . $_POST['userLastname'];
+        }
+        else{
+            $_SESSION['userLastname'] = $_POST['userLastname'];
+        }
+        
+    }
 if(!empty($_POST['abonnement'])) {
     $_SESSION['userContract'] = $_POST['abonnement'];
 }
+
+if(!empty($_POST['geslacht'])) {
+    $_SESSION['geslacht'] = $_POST['geslacht'];
+}
+
+if(!empty($_POST['country'])) {
+    $_SESSION['country'] = $_POST['country'];
+}
+
+if(empty($_POST['Betalen'])){
+    $error = '';
+}
+elseif(strlen($_POST['userPayment']) == 12){
+    $error = errorMSG('Rekening nummer moet 12 nummers zijn!');
+}
+elseif(!empty($_POST['userPayment'])){
+    addUser($_SESSION['userMail'], $_SESSION['userPassword'], $_SESSION['userFirstname'], $_SESSION['userLastname'],  $_SESSION['userContract'], $_POST['payment_method'], $_POST['userPayment'],  $_SESSION['country'], $_SESSION['geslacht']);
+    header("location: Login.php");
+}
+    
 ?>
 
 <!doctype html>
@@ -71,12 +87,12 @@ if(!empty($_POST['abonnement'])) {
     </header>
 
     <main class="login blackbg">
-
+    <?=$error?>
         <div class="centertext">
             <h2>Kies uw betaalmethode</h2>
         </div>
 
-        <form action="Login.php" method="post">
+        <form action="Betalen.php" method="post">
 
         <div class="centertext">
             <?= $htmlPayment ?>
@@ -86,8 +102,8 @@ if(!empty($_POST['abonnement'])) {
             <input name='userPayment' type="number" placeholder="Rekeningnummer">
         </div>
             
-        <div class="centertext link">
-            <input type="submit" class="buttonlink" name="Betalen">
+        <div class="centertext">
+            <input type="submit" class="buttonlink" name="Betalen" value ='betalen'>
         </div>
 
         </form> 
