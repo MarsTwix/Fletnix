@@ -220,3 +220,23 @@ function searchMovies($selectedGenres, $director, $year, $title){
     $data = $query->fetchAll();
     return $data;
 }
+
+function hashDatabasePW($activate) {
+if($activate) {
+    global $dbh;
+
+    $sql = "UPDATE Customer SET $item = :newItem where customer_mail_address = :email";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":email" => $email, ":newItem" => $newItem));
+
+    return;
+
+
+
+
+}
+
+
+}
