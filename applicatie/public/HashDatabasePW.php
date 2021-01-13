@@ -2,6 +2,12 @@
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
+
+// Voer AUB eerst onderstaande query uit voordat het hashen van wachtwoorden start
+//ALTER TABLE [Customer]
+//ALTER COLUMN [password] VARCHAR(200) NOT NULL
+
+
 $passwords = getAllPassword();
 
 foreach($passwords AS $password) {
