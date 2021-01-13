@@ -19,18 +19,20 @@ if($_POST['geslacht'] = "man") {
 
 $_SESSION['land'] = "Netherlands";
 
-if(!empty($_POST['userEmail'])) {
-if(!checkEmail($_POST['userEmail'])) {
-    $_SESSION['userEmail'] = $_POST['userEmail'];
-} else {
-    header("Location: registreren.php");
+if (!empty($_POST['userEmail'])) {
+    if (!checkEmail($_POST['userEmail'])) {
+        $_SESSION['userEmail'] = $_POST['userEmail'];
+    } else {
+        header("Location: registreren.php");
+    }
 }
 
-if(!empty($_POST['userPassword']) && !empty($_POST['userPassword2']) ) {
-if($_POST['userPassword'] = $_POST['userPassword2']) {
-    $_SESSION['userPassword'] = $_POST['userPassword'];
-} else {
-    header("Location: registreren.php");
+if (!empty($_POST['userPassword']) && !empty($_POST['userPassword2'])) {
+    if ($_POST['userPassword'] = $_POST['userPassword2']) {
+        $_SESSION['userPassword'] = $_POST['userPassword'];
+    } else {
+        header("Location: registreren.php");
+    }
 }
 
 if (!empty($_POST['userFirstname'])) {
@@ -73,7 +75,7 @@ $_SESSION['userId'] = "newUser";
         <form action="filmoverzicht.php" method="post">
 
         <div class="centertext">
-            <?=$htmlPayment?>
+            <?= $htmlPayment ?>
         </div>
 
         <div class="centertext">
@@ -81,7 +83,7 @@ $_SESSION['userId'] = "newUser";
         </div>
             
         <div class="centertext link">
-            <input type="submit" class="buttonlink" name="Betalen">Betalen</input>
+            <input type="submit" class="buttonlink" name="Betalen">
         </div>
 
         </form> 
