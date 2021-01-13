@@ -2,9 +2,6 @@
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
-session_start();
-
-
 $passwords = getAllPassword();
 
 foreach($passwords AS $password) {
@@ -14,8 +11,6 @@ foreach($passwords AS $password) {
     }
     echo "<br>";
 }
-
-
 
 ?>
 
@@ -29,12 +24,6 @@ foreach($passwords AS $password) {
     <link rel="icon" href="img/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-
-<body> 
-
-<h3>Password Hash</h3>
-
-
 
 
 
