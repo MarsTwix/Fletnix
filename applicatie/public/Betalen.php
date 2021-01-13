@@ -4,7 +4,7 @@ session_start();
 
     $htmlPayment='';
     $paymentMethods = getPaymentMethods();
-    $htmlPayment .= '<select name="payment method" id="payment method">';
+    $htmlPayment .= '<select name="payment_method" id="payment method">';
     foreach($paymentMethods as $paymentMethod){
         $htmlPayment .= "<option value=$paymentMethod>$paymentMethod</option>";
     }
@@ -19,13 +19,15 @@ if($_POST['geslacht'] = "man") {
 
 $_SESSION['land'] = "Netherlands";
 
-if (!empty($_POST['userEmail'])) {
-    if (!checkEmail($_POST['userEmail'])) {
-        $_SESSION['userEmail'] = $_POST['userEmail'];
+if (!empty($_POST['userMail'])) {
+    if (!checkEmail($_POST['userMail'])) {
+        $_SESSION['userEmail'] = $_POST['userMail'];
     } else {
         header("Location: registreren.php");
     }
 }
+
+var_dump($_POST['userMail']);
 
 if (!empty($_POST['userPassword']) && !empty($_POST['userPassword2'])) {
     if ($_POST['userPassword'] = $_POST['userPassword2']) {
@@ -39,8 +41,8 @@ if (!empty($_POST['userFirstname'])) {
 $_SESSION['userFirstname'] = $_POST['userFirstname'];
 }
 
-if (!empty($_POST['username'])) {
-    $_SESSION['username'] = $_POST['username'];
+if (!empty($_POST['userName'])) {
+    $_SESSION['username'] = $_POST['userName'];
 }
 
 $_SESSION['userId'] = "newUser";
@@ -48,15 +50,6 @@ $_SESSION['userId'] = "newUser";
 if(!empty($_POST['abonnement'])) {
     $_SESSION['userContract'] = $_POST['abonnement'];
 }
-
-if(!empty())
-
-
-
-
-
-
-
 ?>
 
 <!doctype html>
@@ -83,14 +76,14 @@ if(!empty())
             <h2>Kies uw betaalmethode</h2>
         </div>
 
-        <form action="filmoverzicht.php" method="post">
+        <form action="Login.php" method="post">
 
         <div class="centertext">
             <?= $htmlPayment ?>
         </div>
 
         <div class="centertext">
-            <input type="number" placeholder="Rekeningnummer">
+            <input name='userPayment' type="number" placeholder="Rekeningnummer">
         </div>
             
         <div class="centertext link">

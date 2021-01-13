@@ -4,6 +4,15 @@ require_once 'php/simple_functions.php';
 require_once 'php/view_functions.php';
 
 session_start();
+
+if (!empty($_POST['userPayment'])) {
+    if (compareEmail($_SESSION['userEmail'])) {
+        addUser($_SESSION['userEmail'], $_SESSION['userPassword'], $_SESSION['userFirstname'], $_SESSION['username'], $_SESSION['userContract'], $_POST['payment_method'], $_POST['userPayment'], $_SESSION['geslacht']);
+        echo "test geslaagd";
+    }
+}
+
+
 if (isset($_POST["email"])) {
     $email = $_POST["email"];
 } else {
@@ -43,10 +52,9 @@ if (empty($email) || empty($password)) {
         $error = "Email niet aanwezig in de database.";
     }
 };
-if(empty($_POST['Inloggen'])){
+if (empty($_POST['Inloggen'])) {
     $error ='';
-}
-else{
+} else {
     $error = errorMSG($error);
 }
 

@@ -75,11 +75,11 @@
             <?=$htmlCountries?>
         </div>
         <div class="centertext">
-            <input required name="userMail" type="email" placeholder="E-mail">
+            <input required name="userMail" type="text" placeholder="E-mail">
         </div>
         <div class="centertext">
-            <input required  type="userPassword" placeholder="Wachtwoord">
-            <input required  type="userPassword2" placeholder="Wachtwoord herhalen">
+            <input required type="password" name="userPassword" placeholder="Wachtwoord">
+            <input required type="password" name="userPassword2" placeholder="Wachtwoord herhalen">
         </div>
         <div class="centertext">
             <h3><a href="abonnementen.php">Abonnementen:</a></h3>

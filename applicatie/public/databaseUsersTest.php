@@ -59,6 +59,12 @@ if (empty($Testemail) || empty($Testpassword)) {
 
 
 
+
+addUser("test42", "test", "test", "test", "Pro", "Visa", 234234, "M");
+
+
+
+
 ?>
 
 <!DOCTYPE HTML>
@@ -109,5 +115,11 @@ Bevestig nieuw gegeven <input type="text" name="dataConfirm"><br>
 <?=$html?>
 
 </body>
+
+
+
+
+
+
 
 </html>
