@@ -162,7 +162,7 @@ function searchMovies($selectedGenres, $director, $year, $title){
     $lastWhere = false;
     $execute =[];
 
-    $sql ='SELECT top 10 * FROM Movie';
+    $sql ='SELECT title, duration, cover_image, URL FROM Movie';
 
     if(!empty($selectedGenres)){
         $sql .= " WHERE movie_id IN (SELECT movie_id FROM Movie_Genre WHERE";

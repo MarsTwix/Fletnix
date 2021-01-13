@@ -85,7 +85,7 @@ else{
             </div>
         
             <div class="centertext link ">
-                <a href = "wachtwoord_vergeten.html">Wachtwoord vergeten</a>
+                <a href = "wachtwoord_vergeten.php">Wachtwoord vergeten</a>
             </div>
             
             <div class="centertext link ">

@@ -239,6 +239,7 @@ margin: 0 20px;
   .blauw{
     font-family: Avenir Roman,sans-serif;
     color: rgb(0, 128, 255);
+    font-size: 15px;
 }
 
 .error {
@@ -279,4 +280,10 @@ margin: 0 20px;
 
 .movieDiscription {
     grid-area: Discript;
+}
+
+.wit{
+color: white;
+font-family: Avenir Roman,sans-serif;
+font-size: 18px;
 }

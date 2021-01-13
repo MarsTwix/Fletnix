@@ -1,5 +1,10 @@
 <?php
     require_once 'php/simple_functions.php';
+    session_start();
+    $_SESSION['page'] = 1;
+    $_SESSION['regisseur'] = null;
+    $_SESSION['publicatiejaar'] = null;
+    $_SESSION['titel'] = null;
     $htmlGenre='';
     $genres = getGenres();
     $i = 0;
@@ -56,7 +61,7 @@
         
 
         <div class="centertext link">
-            <a class="buttonlink" href="filmoverzicht.html">BACK</a>
+            <a class="buttonlink" href="filmoverzicht.php">BACK</a>
         </div>
     </main>
 </body>

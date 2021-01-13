@@ -3,21 +3,34 @@ require_once "php/data_functions.php";
 
 function filterToHTML($films) {
     global $dbh;
-    $html = '';
-    foreach ($films as $film) {
-      $uur = floor(intval($film['duration']) / 60);
-      $min = intval($film['duration']) - 60;
-      $html .= "<h2>" . $film['title'] . "</h2>";
-      if($film['cover_image'] == null)
+    $resultaten = sizeof($films);
+    $html ='';
+    $html.= "<a class='buttonlink' href='zoeken.php'>BACK</a>";
+    $html .=  "$resultaten resultaten";
+    if($_SESSION['page']*10 > sizeof($films)-1){
+      $max = sizeof($films);
+    }
+    else{
+      $max = $_SESSION['page']*10;
+    }
+    for ($i = ($_SESSION['page']-1)*10; $i < $max ; $i++) {
+      $uur = floor(intval($films[$i]['duration']) / 60);
+      $min = intval($films[$i]['duration']) - 60;
+      
+      $html .= "<h2>" . $films[$i]['title'] . "</h2>";
+      if($films[$i]['cover_image'] == null)
       {
         $html .= "<img src='../img/image-not-available.jpg' height='180'>";
       } 
       else{
-        $html .= "<img src={$film['cover_image']} height='180'>";
+        $html .= "<img src={$films[$i]['cover_image']} height='180'>";
       }
       $html .= "<p>Lengte: {$uur} uur en {$min} min </p>";
-      
     }
+    $html .= "<form class='centertext' action='filter.php' method='post'>";
+    $html .= "<input class = 'buttonlink' type='submit' name='page' value='Vorige'>";
+    $html .= "<input class = 'buttonlink' type='submit' name='page' value='Volgende'>";
+    $html .= "</form>";
     return $html;
 }
 

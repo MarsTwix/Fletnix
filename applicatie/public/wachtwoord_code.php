@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Fletnix - Wachtwoord vergeten</title>
+    <title>Fletnix - Wachtwoord vergeten code</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" href="img/logo.png">
@@ -15,18 +15,18 @@
     </header>
 
     <main class="login blackbg">
-        <h2 class="centertext">Wachtwoord vergeten</h2>
+        <h2 class="centertext">Code</h2>
         <div class="centertext">
-            <input type="email" placeholder="E-mail">
+            <input type="text" placeholder="Code">
         </div>
         <div class="centertext link">
-            <a href = "login.html">Login</a>
+            <a href = "login.php">Login</a>
         </div>
         <div class="centertext link">
-            <a href = "registreren.html">Registreren</a>
+            <a href = "registreren.php">Registreren</a>
         </div>
         <div class="centertext link">
-            <a class="buttonlink" href = "wachtwoord_code.html">Verzenden</a>
+            <a class="buttonlink" href = "nieuw_wachtwoord.php">Verder</a>
         </div>
     </main>
 </body>

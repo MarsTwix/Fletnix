@@ -19,8 +19,8 @@
         <h1 id="fletnix">FLETNIX</h1>
 
         <a class="buttonlink" href="homepage.php">HOME</a>
-        <a class="buttonlink" href = "filmoverzicht_preview.html">PREVIEW</a>
-        <a class="buttonlink" href="login.html">INLOGGEN</a>
+        <a class="buttonlink" href = "filmoverzicht_preview.php">PREVIEW</a>
+        <a class="buttonlink" href="login.php">INLOGGEN</a>
     </nav>
 
     <main class="overons blackbg">
