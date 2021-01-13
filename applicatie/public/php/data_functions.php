@@ -224,7 +224,7 @@ function searchMovies($selectedGenres, $director, $year, $title){
 function getAllPassword() {
     global $dbh;
 
-    $sql = "SELECT password FROM Customer";
+    $sql = "SELECT customer_mail_address, password FROM Customer";
 
     $query = $dbh->prepare($sql);
 
@@ -235,6 +235,20 @@ function getAllPassword() {
     if (empty($returnvalue)) {
         return null;
     } else {
-        return $returnvalue[0]['password'];
+        return $returnvalue;
     }
+}
+
+function hashDatabasePW($email, $password) {
+    global $dbh;
+
+    $newPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "UPDATE Customer SET password = :newItem where customer_mail_address = :email";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":email" => $email, ":newItem" => $newPassword));
+
+    return;
 }
