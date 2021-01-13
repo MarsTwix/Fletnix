@@ -20,14 +20,12 @@ if($_POST['geslacht'] = "man") {
 $_SESSION['land'] = "Netherlands";
 
 if (!empty($_POST['userMail'])) {
-    if (!checkEmail($_POST['userMail'])) {
+    if (!compareEmail($_POST['userMail'])) {
         $_SESSION['userEmail'] = $_POST['userMail'];
     } else {
         header("Location: registreren.php");
     }
 }
-
-var_dump($_POST['userMail']);
 
 if (!empty($_POST['userPassword']) && !empty($_POST['userPassword2'])) {
     if ($_POST['userPassword'] = $_POST['userPassword2']) {
