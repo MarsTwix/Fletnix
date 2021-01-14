@@ -231,10 +231,10 @@ function accountToHTML(){
   }
   
   $html.='<main class="account"><div class="centertext">';
-  $html .="<h2>Email: {$_SESSION['email']}</h2>";
-  $html.='</div><div class="centertext link"><a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a></div><div class="centertext link"><a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a></div><div class="centertext link">';
+  $html .="<h2>Welkom bij uw account instellingen</h2>";
+  $html.='</div><div class="centertext_link"><a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a></div><div class="centertext_link"><a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a></div><div class="centertext_link">';
   if(empty($_SESSION['EndDate'])){
-    $html .='<a class="buttonlink" href="uitschrijven.php" >Uitschrijven</a>';
+    $html .='<a class="buttonLogOut" href="uitschrijven.php" >Uitschrijven</a>';
   }
   else{
     $html .='<a class="buttonlink" href="inschrijven.php" >inschrijven</a>';
