@@ -36,7 +36,7 @@ require_once 'php/simple_functions.php';
     <main class="center-screen filmbg bg">
         <h2 class="centertext">Wachtwoord wijzigen</h2>
 
-        <form action="Wachtwoord_wijzigen.php" method="post"></form>
+        <form action="Wachtwoord_wijzigen.php" method="post">
         <input name="newPassword" type="password" placeholder="Wachtwoord">
         <input name="newPassword2" type="password" placeholder="Herhaal Wachtwoord">
         <input type="submit">

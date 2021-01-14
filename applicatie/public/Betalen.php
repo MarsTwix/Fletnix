@@ -83,7 +83,7 @@ elseif(!empty($_POST['userPayment'])){
 <body class = 'bg loginImg'>
 
     <header>
-        <a href="homepage.php"> <img class = "logo" src="img/logo.png"> </a>
+        <a href="homepage.php"> <img class = "logo" src="img/logo.png" alt=""> </a>
     </header>
 
     <main class="login blackbg">
