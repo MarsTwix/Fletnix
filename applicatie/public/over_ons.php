@@ -26,7 +26,7 @@
     <main class="overons blackbg">
         <div class="centertext">
             <h2><u>Over ons</u></h2>
-            <p>Wij zijn Fletnix! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis ante lorem.
+            <p>Wij zijn Fletnix! Deze website is gemaakt door: Marnix, Daniel en Renzo, consectetur adipiscing elit. Aliquam quis ante lorem.
                 Praesent vitae ornare magna. Vivamus turpis sem, congue eu ante vel, ullamcorper faucibus augue. Fusce
                 nulla lacus, tristique at magna nec, aliquam tincidunt ante. Vivamus feugiat pulvinar mi, sit amet
                 hendrerit urna dignissim vel. Sed vel ornare risus, eget elementum nunc. Sed eu hendrerit enim. Fusce
