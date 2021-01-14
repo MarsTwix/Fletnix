@@ -150,7 +150,9 @@ function getCustomerData($email){
     $query->execute(array(':email' => $email));
 
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
-    return $data[0];
+    if(!empty($data)){
+        return $data[0];
+    }
 }
 
 function searchMovies($selectedGenres, $director, $year, $title){

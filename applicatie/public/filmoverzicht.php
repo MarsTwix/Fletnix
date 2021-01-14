@@ -14,7 +14,6 @@ require_once 'php/view_functions.php';
 
     $customer = getCustomerData($_SESSION['email']);
     $accountButton = "<a href = 'account.php'><h3>Welkom terug, {$customer['firstname']} {$customer['lastname']}!</h3></a>";
-    //TODO uitlog knop en alle pagina's bij de home page
     $html = filmOverzichtToHTML();
 ?>
 <!DOCTYPE html>
