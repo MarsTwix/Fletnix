@@ -31,7 +31,7 @@
     </nav>
 <main class="account">
         <div class="centertext">
-            <?=$customer['customer_mail_address']?>
+            <?="<h2>Email: {$customer['customer_mail_address']}</h2>"?>
             </div>
             <div class="centertext link">
             <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
@@ -39,9 +39,5 @@
             <div class="centertext link">
             <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
         </div>
-        <div class="centertext link">
-            <a class="buttonLogOut" href="uitschrijven.php?" >Log Uit</a>
-        </div>
-
     </main>
 </body>
