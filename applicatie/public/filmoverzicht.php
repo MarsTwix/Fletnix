@@ -33,7 +33,7 @@ require_once 'php/view_functions.php';
         <h1 class="centertext">FLETNIX</h1>
         <a class="buttonlink" href = "pages.php" >Alle Pagina's</a>
         <a class="buttonlink" href = "zoeken.php">Zoeken</a>
-        <a class="buttonlink" href="LogUit.php" >Uitloggen</a>
+        <a class="buttonLogOut" href="LogUit.php" >Uitloggen</a>
         <?= $accountButton?>
     </nav>
     <main>
