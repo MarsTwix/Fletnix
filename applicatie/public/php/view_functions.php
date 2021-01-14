@@ -14,7 +14,7 @@ function filterToHTML($films) {
     for ($i = ($_SESSION['page']-1)*80; $i < $max ; $i++) {
       $uur = floor(intval($films[$i]['duration']) / 60);
       $min = intval($films[$i]['duration']) - 60;
-      $html .= "<a href = 'Filmafspelen.php?movie={$films[$i]['title']}' class =' blackbg filter'>";
+      $html .= '<a href = "Filmafspelen.php?movie=' . $films[$i]['title'] . '" class =" blackbg filter">';
       $html .= "<h3 class = 'centertext'>" . $films[$i]['title'] . "</h3>";
       if($films[$i]['cover_image'] == null)
       {
@@ -26,7 +26,6 @@ function filterToHTML($films) {
       $html .= "<p class = 'centertext'>Lengte: {$uur} uur en {$min} min </p>";
       $html .= '</a>';
     }
-    var_dump($html);
     return $html;
 }
 
@@ -134,7 +133,94 @@ function filmAfspelenToHTML($title, $duration, $description, $year, $url, $genre
 }
 
 function filmOverzichtToHTML(){
-
+  $TopMovies = getTopMovies();
+  $html = '';
+  $html .= '<div><h2>Populair</h2></div>';
+  $html.= '<div class="filter-order">';
+  foreach($TopMovies as $movie_id){
+    $movie = getMovieInfo($movie_id[0], 'title');
+    $movieImg = getMovieInfo($movie_id[0], 'cover_image');
+    $html .= "<a class='blackbg filter' href='Filmafspelen.php?movie=$movie'>";
+    if($movieImg == null)
+    {
+      $html .= "<img class = 'centerimg' src='../img/image-not-available.jpg' height='180px'>";
+    } 
+    else{
+      $html .= "<img class = 'centerimg' src='../img/$movieImg' height='180px'>";
+    }
+    $html .= "<h3 class = 'centertext'>$movie</h3> ";
 }
+  $html .= '</a></div>';
+  $genres = getGenres();
+  foreach($genres as $genre){
+    $movies = getGenreTop($genre);
+    if(empty($movies)){
+      $movies = getGenreMovies($genre);
+    }
+    $html .= "<div><h2>$genre</h2></div>";
+    $html.= '<div class="filter-order">';
+    foreach($movies as $movie_id){
+      $movie = getMovieInfo($movie_id[0], 'title');
+      $movieImg = getMovieInfo($movie_id[0], 'cover_image');
+      $html .= '<a class="blackbg filter" href="Filmafspelen.php?movie='. $movie .'">';
+      if($movieImg == null)
+      {
+        $html .= "<img class = 'centerimg' src='../img/image-not-available.jpg' height='180px'>";
+      } 
+      else{
+        $html .= "<img class = 'centerimg' src='../img/$movieImg' height='180px'>";
+      }
+      $html .= "<h3 class = 'centertext'>$movie</h3> ";
+    }
+    $html .= '</a></div>';
+  }
+  return $html;
+}
+
+function filmOverzichtPreviewToHTML(){
+  $TopMovies = getTopMovies();
+  $html = '';
+  $html .= '<div><h2>Populair</h2></div>';
+  $html.= '<div class="filter-order">';
+  foreach($TopMovies as $movie_id){
+    $movie = getMovieInfo($movie_id[0], 'title');
+    $movieImg = getMovieInfo($movie_id[0], 'cover_image');
+    $html .= "<a class='blackbg filter' href='abonnementen.php'>";
+    if($movieImg == null)
+    {
+      $html .= "<img class = 'centerimg' src='../img/image-not-available.jpg' height='180px'>";
+    } 
+    else{
+      $html .= "<img class = 'centerimg' src='../img/$movieImg' height='180px'>";
+    }
+    $html .= "<h3 class = 'centertext'>$movie</h3> ";
+}
+  $html .= '</a></div>';
+  $genres = getGenres();
+  foreach($genres as $genre){
+    $movies = getGenreTop($genre);
+    if(empty($movies)){
+      $movies = getGenreMovies($genre);
+    }
+    $html .= "<div><h2>$genre</h2></div>";
+    $html.= '<div class="filter-order">';
+    foreach($movies as $movie_id){
+      $movie = getMovieInfo($movie_id[0], 'title');
+      $movieImg = getMovieInfo($movie_id[0], 'cover_image');
+      $html .= '<a class="blackbg filter" href="abonnementen.php">';
+      if($movieImg == null)
+      {
+        $html .= "<img class = 'centerimg' src='../img/image-not-available.jpg' height='180px'>";
+      } 
+      else{
+        $html .= "<img class = 'centerimg' src='../img/$movieImg' height='180px'>";
+      }
+      $html .= "<h3 class = 'centertext'>$movie</h3> ";
+    }
+    $html .= '</a></div>';
+  }
+  return $html;
+}
+
 
 ?>

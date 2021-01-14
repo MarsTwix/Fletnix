@@ -145,6 +145,7 @@ div.link{
 .blackbg{
     background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 10px;
+    width: 500px;
 }
 
 .login{
@@ -163,6 +164,7 @@ div.link{
     max-width: 200px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .abonnement h2{
@@ -304,7 +306,6 @@ font-size: 18px;
 .filter-order{
     display: flex;
     justify-content: left;
-    align-items: center;
     flex-wrap: wrap;
 }
 

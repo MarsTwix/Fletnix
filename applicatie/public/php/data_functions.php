@@ -249,7 +249,9 @@ function hashDatabasePW($email, $password) {
 
 function getMovieID($name){
     global $dbh;
-    $query = $dbh->query("SELECT movie_id FROM Movie Where title = '$name'");
+    $sql = "SELECT movie_id FROM Movie Where title = :name";
+    $query = $dbh->prepare($sql);
+    $query->execute(array(":name" => $name));
     $data = $query->fetchAll(PDO::FETCH_NUM);
 
     return $data[0][0];
@@ -318,14 +320,21 @@ function uitschrijven($email){
 
 function getTopMovies(){
     global $dbh;
-    $query = $dbh->query("SELECT top(24) movie_id, count(customer_mail_address) as Watched FROM Watchhistory group by movie_id order by Watched desc");
+    $query = $dbh->query("SELECT top(20) movie_id, count(customer_mail_address) as Watched FROM Watchhistory group by movie_id order by Watched desc");
     $data = $query->fetchAll(PDO::FETCH_NUM);
     return $data;
 }
 
 function getGenreTop($genre){
     global $dbh;
-    $query = $dbh->query("SELECT top(24) movie_id, count(customer_mail_address) as Watched FROM Watchhistory Where movie_id in (select movie_id from Movie_Genre where genre_name = $genre) group by movie_id order by Watched desc");
+    $query = $dbh->query("SELECT top(20) movie_id, count(customer_mail_address) as Watched FROM Watchhistory Where movie_id in (select movie_id from Movie_Genre where genre_name = '$genre') group by movie_id order by Watched desc");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    return $data;
+}
+
+function getGenreMovies($genre){
+    global $dbh;
+    $query = $dbh->query("SELECT top(20) movie_id from Movie_Genre where genre_name = '$genre'");
     $data = $query->fetchAll(PDO::FETCH_NUM);
     return $data;
 }

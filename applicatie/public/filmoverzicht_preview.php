@@ -1,3 +1,8 @@
+<?php
+require_once 'php/view_functions.php';
+    $html = filmOverzichtPreviewToHTML();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -11,57 +16,79 @@
 
 <body class ="filmbg bg">
     <nav>
-        <h1 id="fletnix">FLETNIX</h1>
-
-        <a class="buttonlink" id="homebtn" href="homepage.php">HOME</a>
-        <a class="buttonlink" id="previewbtn" href = "abonnementen.php">ABONNEREN</a>
-        <a id="login" class="buttonlink" href="Login.php">INLOGGEN</a>
+        <h1 class="centertext">FLETNIX</h1>
+        <a class="buttonlink" href = "homepage.php">Homepage</a>
+        <a class="buttonlink" href = "abonnementen.php">Abonneren</a>
     </nav>
-
-    <h2>Aanbevolen voor jou!</h2>
-    <div class="lego_movie">
-        <a href="abonnementen.php"> <img src="img/Lego.jpg"  height="180" alt="logo"> </a>
-    </div>
+    <main>
     <div>
-        <h3>Nieuwste Films </h3>
-    </div>
-    <div class="films">
+        <div>
+            <h2>Aanbevolen voor jou!</h2>
+        </div>
 
-        <a class="films"> <img src="img/the_minions.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Brandweer.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/bee_movie.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/frozen.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/UP.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Cars.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Avatarrr.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Pingu.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Lion_king.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Lego.jpg"  height="180" alt="no img"> </a>
-        <a class="films">  <img src="img/Smurven.jpg"  height="180" alt="no img"> </a>
+        <div class="filter-order">
+            <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Lego.jpg"  height='180'> 
+                    <h3 class = 'centertext'>Lego movie</h3> 
+                </a>
+                </div>
 
+            <div>
+                <h2>Nieuwste Films </h2>
+            </div>
 
-    </div>
+            <div class="filter-order">
+                <a class="blackbg filter" href="abonnementen.php">
+                    <img class = 'centerimg' src="img/the_minions.jpg" height='180'> 
+                    <h3 class = 'centertext'>Despicable me 3</h3>
+                </a>
+                
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Brandweer.jpg" height='180'>
+                    <h3 class = 'centertext'>Brandweerman Sam</h3> 
+                </a>
 
-    <div>
-        <h2>Populair</h2>
-    </div>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/bee_movie.jpg"  height='180'> 
+                    <h3 class = 'centertext'>Bee movie</h3> 
+                </a>
 
-    <div class="films">
-
-        <a class="films"> <img src="img/the_minions.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Brandweer.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/bee_movie.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/frozen.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/UP.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Cars.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Avatarrr.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Pingu.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Lion_king.jpg"  height="180" alt="no img"> </a>
-        <a class="films"> <img src="img/Lego.jpg"  height="180" alt="no img"> </a>
-        <a class="films">  <img src="img/Smurven.jpg"  height="180" alt="no img"> </a>
-
-    </div>
-
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/frozen.jpg" height='180'> 
+                    <h3 class = 'centertext'>Frozen</h3> 
+                </a>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/UP.jpg"  height='180'> 
+                    <h3 class = 'centertext'>UP</h3> 
+                </a>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Cars.jpg"  height='180'> 
+                    <h3 class = 'centertext'>Cars</h3> 
+                </a>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Avatarrr.jpg"  height='180'> 
+                    <h3 class = 'centertext'>Avatar</h3>    
+                </a>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Pingu.jpg"  height='180'> 
+                    <h3 class = 'centertext'>Pingu</h3> 
+                </a>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Lion_king.jpg"  height='180'> 
+                    <h3 class = 'centertext'>Lion king</h3> 
+                </a>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Lego.jpg"  height='180'> 
+                    <h3 class = 'centertext'>Lego movie</h3> 
+                </a>
+                <a class="blackbg filter" href="abonnementen.php"> 
+                    <img class = 'centerimg' src="img/Smurven.jpg"  height='180'> 
+                    <h3 class = 'centertext'>De smurfen</h3> 
+                </a>
+            </div>
+            <?= $html?>
+</div>
+</main>
 </body>
 
 </html>
