@@ -40,7 +40,7 @@
             <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
         </div>
         <div class="centertext link">
-            <a class="buttonLogOut" href="uitschrijven.php?" >Log Uit</a>
+            <a class="buttonLogOut" href="uitschrijven.php?" >Uitloggen</a>
         </div>
 
     </main>
