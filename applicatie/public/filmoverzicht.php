@@ -1,5 +1,6 @@
 <?php
 require_once 'php/data_functions.php';
+require_once 'php/view_functions.php';
     session_start();
 
     if(isset($_SESSION['Login'])) {
@@ -14,6 +15,7 @@ require_once 'php/data_functions.php';
     $customer = getCustomerData($_SESSION['email']);
     $accountButton = "<a href = 'account.php'><h3>Welkom terug, {$customer['firstname']} {$customer['lastname']}!</h3></a>";
     //TODO uitlog knop en alle pagina's bij de home page
+    $html = filmOverzichtToHTML();
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -34,16 +36,22 @@ require_once 'php/data_functions.php';
         <?= $accountButton?>
     </nav>
     <main>
-        <h2 class="back">Aanbevolen voor jou!</h2>
+    <div>
+        <div>
+            <h2>Aanbevolen voor jou!</h2>
+        </div>
+
         <div class="filter-order">
             <a class="blackbg filter" href="Filmafspelen.php?movie=The lego movie"> 
                     <img class = 'centerimg' src="img/Lego.jpg"  height='180'> 
                     <h3 class = 'centertext'>Lego movie</h3> 
                 </a>
                 </div>
+
             <div>
-                <h2 class="back">Nieuwste Films </h2>
+                <h2>Nieuwste Films </h2>
             </div>
+
             <div class="filter-order">
                 <a class="blackbg filter">
                     <img class = 'centerimg' src="img/the_minions.jpg" height='180'> 
@@ -92,8 +100,9 @@ require_once 'php/data_functions.php';
                     <img class = 'centerimg' src="img/Smurven.jpg"  height='180'> 
                     <h3 class = 'centertext'>De smurfen</h3> 
                 </a>
-
             </div>
+            <?= $html?>
+</div>
 </main>
 </body>
 
