@@ -25,7 +25,7 @@ if(isset($_SESSION['Login'])) {
 
 <!doctype html>
 
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - Account info</title>

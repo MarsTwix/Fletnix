@@ -24,7 +24,7 @@
     $html = filmAfspelenToHTML($title, $duration, $description, $year, $url, $genres, $directors, $casts, $roles);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 
 
     <head>

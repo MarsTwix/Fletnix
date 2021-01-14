@@ -16,7 +16,7 @@ require_once 'php/data_functions.php';
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - filmoverzicht</title>
