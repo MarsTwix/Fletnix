@@ -318,6 +318,16 @@ function uitschrijven($email){
     $query->execute(array(":email" => $email));
 }
 
+function inschrijven($email){
+    global $dbh;
+
+    $sql = "UPDATE Customer SET subscription_start = GETDATE(), subscription_end = null where customer_mail_address = :email";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":email" => $email));
+}
+
 function getTopMovies(){
     global $dbh;
     $query = $dbh->query("SELECT top(20) movie_id, count(customer_mail_address) as Watched FROM Watchhistory group by movie_id order by Watched desc");

@@ -222,5 +222,25 @@ function filmOverzichtPreviewToHTML(){
   return $html;
 }
 
+function accountToHTML(){
+  $_SESSION['EndDate'] = getSubscibDate($_SESSION['email']);
+  $html = '';
+  if(empty($_SESSION['EndDate']))
+  {
+    $html.= '<nav class="back"><a class="buttonlink" href="filmoverzicht.php">BACK</a></nav>';
+  }
+  
+  $html.='<main class="account"><div class="centertext">';
+  $html .="<h2>Email: {$_SESSION['email']}</h2>";
+  $html.='</div><div class="centertext link"><a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a></div><div class="centertext link"><a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a></div><div class="centertext link">';
+  if(empty($_SESSION['EndDate'])){
+    $html .='<a class="buttonlink" href="uitschrijven.php" >Uitschrijven</a>';
+  }
+  else{
+    $html .='<a class="buttonlink" href="inschrijven.php" >inschrijven</a>';
+  }
+  $html.='</div></main>';
+  return $html;
+}
 
 ?>
