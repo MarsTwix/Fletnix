@@ -31,12 +31,12 @@
     </nav>
 <main class="account">
         <div class="centertext">
-            <?="<h2>Email: {$customer['customer_mail_address']}</h2>"?>
+            <?="<h2>Welkom terug, {$customer['firstname']}</h2>"?>
             </div>
-            <div class="centertext link">
+            <div class="centertext_link">
             <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
             </div>
-            <div class="centertext link">
+            <div class="centertext_link">
             <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
         </div>
     </main>

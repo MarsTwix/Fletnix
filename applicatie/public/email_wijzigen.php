@@ -44,14 +44,15 @@ $html = "<h3>mail ingevoerd</h3>";
         <a class="buttonlink" href="account.php">BACK</a>
     </nav>
 
+    <h2 class="centertext">Email wijzigen</h2>
 
+<div class="accountForm">
         <form action="email_wijzigen.php" method="post">
         <input name="newMail" type="text" placeholder="Email">
         <input name="newMail2" type="text" placeholder="Email opnieuw">
-        <input type="submit">
-        <a class="buttonlink" href = "account.php">wijzigen</a>
+        <input type="submit" value="Wijzigen" class="buttonlink">
         </form>
-
+</div>
 
 </body>
 
