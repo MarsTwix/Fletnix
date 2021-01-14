@@ -34,8 +34,9 @@
 
 <main class="account">
         <div class="centertext">
-            <?="<h2>Email: {$customer['customer_mail_address']}</h2>"?>
+            <?="<h2>Welkom terug, {$customer['firstname']}</h2>"?>
             </div>
+<<<<<<< HEAD
             <br><br>
             <div class="centertext link">
             <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
@@ -44,6 +45,12 @@
             <h2 class="centertext"> Wachtwoord: ******** </h2>
             <br><br>
             <div class="centertext link">
+=======
+            <div class="centertext_link">
+            <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
+            </div>
+            <div class="centertext_link">
+>>>>>>> 68e550f5c640a31eaf29929d240d2dbc7d448b8d
             <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
         </div>
     </main>

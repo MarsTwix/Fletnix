@@ -4,8 +4,8 @@ session_start();
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
-if(isset($_SESSION['Login'])) {
-    if(!$_SESSION['Login']) {
+if (isset($_SESSION['Login'])) {
+    if (!$_SESSION['Login']) {
         header("Location: Login.php");
     }
 } else {
@@ -44,14 +44,13 @@ if(isset($_SESSION['Login'])) {
     <main class="center-screen filmbg bg">
         <h2 class="centertext">Wachtwoord wijzigen</h2>
 
+        <div class="accountForm">
         <form action="Wachtwoord_wijzigen.php" method="post">
         <input name="newPassword" type="password" placeholder="Wachtwoord">
         <input name="newPassword2" type="password" placeholder="Herhaal Wachtwoord">
-        <input type="submit">
-
-        <a class="buttonlink" href = "account.php">wijzigen</a>
-        
+        <input type="submit" value="Wijzigen" class="buttonlink">
         </form>
+        <div>
     </main>
 </body>
 
