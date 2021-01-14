@@ -11,6 +11,8 @@
     }
 
     $customer = getCustomerData($_SESSION['email']);
+   
+    //TODO uitlog knop en alle pagina's bij de home page
     //TODO als je op een uitgeschreven account komt ga je hier heen en kan je opnieuw inschrijven en anders kan je uitschrijven.
 ?>
 
@@ -29,13 +31,18 @@
     <nav class="back">
 <a class="buttonlink" href="filmoverzicht.php">BACK</a>
     </nav>
+
 <main class="account">
         <div class="centertext">
             <?="<h2>Email: {$customer['customer_mail_address']}</h2>"?>
             </div>
+            <br><br>
             <div class="centertext link">
             <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
             </div>
+            <br><br>
+            <h2 class="centertext"> Wachtwoord: ******** </h2>
+            <br><br>
             <div class="centertext link">
             <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
         </div>
