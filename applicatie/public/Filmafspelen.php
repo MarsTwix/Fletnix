@@ -2,6 +2,15 @@
     require_once 'php/data_functions.php';
     require_once 'php/view_functions.php';
     
+    if(isset($_SESSION['Login'])) {
+        if(!$_SESSION['Login']) {
+            header("Location: Login.php");
+        }
+    } else {
+        header("Location: Login.php");
+    }
+
+
     $title = $_GET['movie'];
     $id = getMovieID($title);
     $duration = getMovieInfo($id, 'duration');

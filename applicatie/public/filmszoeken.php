@@ -5,6 +5,14 @@
 require_once 'data_functies.php';
 require_once 'view_functies.php';
 
+if(isset($_SESSION['Login'])) {
+  if(!$_SESSION['Login']) {
+      header("Location: Login.php");
+  }
+} else {
+  header("Location: Login.php");
+}
+
 // Data ophalen
 $films = haalAlleFilmsOp();
 // Evt. kan je hier een `var_dump()` doen om te kijken wat er in de data zit.

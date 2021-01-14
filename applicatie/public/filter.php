@@ -3,6 +3,14 @@
     require_once 'php/view_functions.php';
     session_start();
 
+    if(isset($_SESSION['Login'])) {
+        if(!$_SESSION['Login']) {
+            header("Location: Login.php");
+        }
+    } else {
+        header("Location: Login.php");
+    }
+
     $data = searchMovies($_SESSION['genres'], $_SESSION['regisseur'], $_SESSION['publicatiejaar'], $_SESSION['titel']);
     if(empty($_SESSION['page']) || empty($_POST['page'])){
         $_POST = ['page' => null];

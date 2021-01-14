@@ -4,6 +4,14 @@ session_start();
 require_once 'php/data_functions.php';
 require_once 'php/simple_functions.php';
 
+if(isset($_SESSION['Login'])) {
+    if(!$_SESSION['Login']) {
+        header("Location: Login.php");
+    }
+} else {
+    header("Location: Login.php");
+}
+
 //TODO als het niet klopt dan terug naar deze pagina + error dr bij
 
     if (!empty($_POST['newPassword']) && !empty($_POST['newPassword2'])) {

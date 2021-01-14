@@ -2,6 +2,15 @@
     require_once 'php/simple_functions.php';
     require_once 'php/view_functions.php';
     session_start();
+
+    if(isset($_SESSION['Login'])) {
+        if(!$_SESSION['Login']) {
+            header("Location: Login.php");
+        }
+    } else {
+        header("Location: Login.php");
+    }
+
     $_SESSION['page'] = 1;
     $_SESSION['regisseur'] = null;
     $_SESSION['publicatiejaar'] = null;

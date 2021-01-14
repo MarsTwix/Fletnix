@@ -1,6 +1,15 @@
 <?php
     require_once "php/data_functions.php";
     session_start();
+
+    if(isset($_SESSION['Login'])) {
+        if(!$_SESSION['Login']) {
+            header("Location: Login.php");
+        }
+    } else {
+        header("Location: Login.php");
+    }
+
     $customer = getCustomerData($_SESSION['email']);
 ?>
 
