@@ -33,6 +33,7 @@ if (empty($email) || empty($password)) {
             $_SESSION['EndDate'] = getSubscibDate($email);
 
             if (!empty($_SESSION['EndDate'])) {
+                header("Location: account.php");
             } else{
                 header("Location: filmoverzicht.php");
             } 

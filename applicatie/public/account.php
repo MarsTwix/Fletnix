@@ -1,5 +1,6 @@
 <?php
     require_once "php/data_functions.php";
+    require_once "php/view_functions.php";
     session_start();
 
     if(isset($_SESSION['Login'])) {
@@ -11,7 +12,7 @@
     }
 
     $customer = getCustomerData($_SESSION['email']);
-    //TODO als je op een uitgeschreven account komt ga je hier heen en kan je opnieuw inschrijven en anders kan je uitschrijven.
+    $html = accountToHTML();
 ?>
 
 <!doctype html>
@@ -26,18 +27,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body class="filmbg bg">
-    <nav class="back">
-<a class="buttonlink" href="filmoverzicht.php">BACK</a>
-    </nav>
-<main class="account">
-        <div class="centertext">
-            <?="<h2>Email: {$customer['customer_mail_address']}</h2>"?>
-            </div>
-            <div class="centertext link">
-            <a class="buttonlink" href="email_wijzigen.php" >Email wijzigen</a>
-            </div>
-            <div class="centertext link">
-            <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
-        </div>
-    </main>
+    <?=$html?>
 </body>
