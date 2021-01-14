@@ -53,8 +53,6 @@ $html = "<h3>mail ingevoerd</h3>";
         </form>
 
 
-    </main>
-
 </body>
 
 

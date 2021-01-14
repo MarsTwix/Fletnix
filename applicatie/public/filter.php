@@ -40,7 +40,7 @@
 
 <body class="filmbg bg">
     <div class='centertext back'><a class='buttonlink' href='zoeken.php'>BACK</a></div>  
-    <?="<div class='centertext'><h2>{$resultaten} resultaten<h2></div>"?>
+    <?="<div class='centertext'><h2>{$resultaten} resultaten</h2></div>"?>
     <main class = "filter-order">
         
         <?=$html?>

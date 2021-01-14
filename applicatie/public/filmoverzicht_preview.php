@@ -20,24 +20,25 @@
 
     <h2>Aanbevolen voor jou!</h2>
     <div class="lego_movie">
-        <a href="abonnementen.php"> <img src="img/Lego.jpg"  height="180"> </a>
+        <a href="abonnementen.php"> <img src="img/Lego.jpg"  height="180" alt="logo"> </a>
     </div>
     <div>
         <h3>Nieuwste Films </h3>
     </div>
     <div class="films">
 
-        <a> <img src="img/the_minions.jpg"  height="180"> </a>
-        <a> <img src="img/Brandweer.jpg"  height="180"> </a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <img src="img/bee_movie.jpg"  height="180"> </a>
-        <a href="https://www.youtube.com/watch?v=o9aNP_I0E40"> <img src="img/frozen.jpg"  height="180"> </a>
-        <a> <img src="img/UP.jpg"  height="180"> </a>
-        <a> <img src="img/Cars.jpg"  height="180"> </a>
-        <a> <img src="img/Avatarrr.jpg"  height="180"> </a>
-        <a href="https://www.youtube.com/watch?v=o9aNP_I0E40"> <img src="img/Pingu.jpg"  height="180"> </a>
-        <a> <img src="img/Lion_king.jpg"  height="180"> </a>
-        <a> <img src="img/Lego.jpg"  height="180"> </a>
-        <a> <img src="img/Smurven.jpg"  height="180"> </a>
+        <a class="films"> <img src="img/the_minions.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Brandweer.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/bee_movie.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/frozen.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/UP.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Cars.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Avatarrr.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Pingu.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Lion_king.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Lego.jpg"  height="180" alt="no img"> </a>
+        <a class="films">  <img src="img/Smurven.jpg"  height="180" alt="no img"> </a>
+
 
     </div>
 
@@ -46,17 +47,18 @@
     </div>
 
     <div class="films">
-        <a> <img src="img/the_minions.jpg"  height="180"> </a>
-        <a> <img src="img/Brandweer.jpg"  height="180"> </a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <img src="img/bee_movie.jpg" height="180"> </a>
-        <a href="https://www.youtube.com/watch?v=o9aNP_I0E40"> <img src="img/frozen.jpg"  height="180"> </a>
-        <a> <img src="img/UP.jpg"  height="180"> </a>
-        <a> <img src="img/Cars.jpg"  height="180"> </a>
-        <a> <img src="img/Avatarrr.jpg"  height="180"> </a>
-        <a href="https://www.youtube.com/watch?v=o9aNP_I0E40"> <img src="img/Pingu.jpg"  height="180"> </a>
-        <a> <img src="img/Lion_king.jpg"  height="180"> </a>
-        <a> <img src="img/Lego.jpg"  height="180"> </a>
-        <a> <img src="img/Smurven.jpg"  height="180"> </a>
+
+        <a class="films"> <img src="img/the_minions.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Brandweer.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/bee_movie.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/frozen.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/UP.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Cars.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Avatarrr.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Pingu.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Lion_king.jpg"  height="180" alt="no img"> </a>
+        <a class="films"> <img src="img/Lego.jpg"  height="180" alt="no img"> </a>
+        <a class="films">  <img src="img/Smurven.jpg"  height="180" alt="no img"> </a>
 
     </div>
 

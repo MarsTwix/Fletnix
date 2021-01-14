@@ -71,7 +71,7 @@ if (empty($_POST['Inloggen'])) {
 <body class = 'bg loginImg'>
 
     <header>
-        <a href="homepage.php"> <img class = "logo" src="img/logo.png"> </a>
+        <a href="homepage.php"> <img class = "logo" src="img/logo.png" alt="logo"> </a>
     </header>
 
     <main class="login blackbg">
