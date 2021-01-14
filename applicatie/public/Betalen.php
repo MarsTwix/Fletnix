@@ -58,7 +58,7 @@ if(!empty($_POST['country'])) {
 if(empty($_POST['Betalen'])){
     $error = '';
 }
-elseif(strlen($_POST['userPayment']) == 12){
+elseif(strlen($_POST['userPayment']) != 12){
     $error = errorMSG('Rekening nummer moet 12 nummers zijn!');
 }
 elseif(!empty($_POST['userPayment'])){

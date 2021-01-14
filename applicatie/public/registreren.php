@@ -30,7 +30,6 @@
         $htmlContracts.="</label>";
     }
     $error = $_SESSION['error'];
-    var_dump($error);
 ?>
 
 <!DOCTYPE html>

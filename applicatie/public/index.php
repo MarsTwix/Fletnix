@@ -31,7 +31,7 @@ require_once 'php/db_connectie.php';
 // }
 // echo "<br> random code: {$randomString} <br>";
 
-header("Location: filmoverzicht_preview.php");
+header("Location: homepage.php");
 
 ?>
 
