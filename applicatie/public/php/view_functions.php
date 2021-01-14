@@ -5,27 +5,28 @@ function filterToHTML($films) {
     global $dbh;
     $resultaten = sizeof($films);
     $html ='';
-    if($_SESSION['page']*50 > sizeof($films)-1){
+    if($_SESSION['page']*80 > sizeof($films)-1){
       $max = sizeof($films);
     }
     else{
-      $max = $_SESSION['page']*50;
+      $max = $_SESSION['page']*80;
     }
-    for ($i = ($_SESSION['page']-1)*50; $i < $max ; $i++) {
+    for ($i = ($_SESSION['page']-1)*80; $i < $max ; $i++) {
       $uur = floor(intval($films[$i]['duration']) / 60);
       $min = intval($films[$i]['duration']) - 60;
-      $html .= "<a href = 'Filmafspelen.php?movie={$films[$i]['title']}' class ='centertext blackbg filter'>";
+      $html .= "<a href = 'Filmafspelen.php?movie={$films[$i]['title']}' class =' blackbg filter'>";
       $html .= "<h3 class = 'centertext'>" . $films[$i]['title'] . "</h3>";
       if($films[$i]['cover_image'] == null)
       {
-        $html .= "<img src='../img/image-not-available.jpg' width='100'>";
+        $html .= "<img class = 'centerimg' src='../img/image-not-available.jpg' width='100px'>";
       } 
       else{
-        $html .= "<img src='../img/{$films[$i]['cover_image']}' width='100'>";
+        $html .= "<img class = 'centerimg' src='../img/{$films[$i]['cover_image']}' width='100px'>";
       }
-      $html .= "<p>Lengte: {$uur} uur en {$min} min </p>";
+      $html .= "<p class = 'centertext'>Lengte: {$uur} uur en {$min} min </p>";
       $html .= '</a>';
     }
+    var_dump($html);
     return $html;
 }
 
@@ -131,4 +132,9 @@ function filmAfspelenToHTML($title, $duration, $description, $year, $url, $genre
   $html .= '</div></div>';
   return $html;
 }
+
+function filmOverzichtToHTML(){
+
+}
+
 ?>
