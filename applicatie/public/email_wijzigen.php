@@ -29,7 +29,7 @@ $html = "<h3>mail ingevoerd</h3>";
 
 <!doctype html>
 
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - Account detail</title>

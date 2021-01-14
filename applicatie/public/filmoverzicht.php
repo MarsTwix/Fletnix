@@ -16,7 +16,7 @@ require_once 'php/data_functions.php';
     //TODO uitlog knop en alle pagina's bij de home page
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - filmoverzicht</title>

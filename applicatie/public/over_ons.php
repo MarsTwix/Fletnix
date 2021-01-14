@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - Over Ons</title>

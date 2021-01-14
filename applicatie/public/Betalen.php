@@ -70,7 +70,7 @@ elseif(!empty($_POST['userPayment'])){
 
 <!doctype html>
 
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - Login</title>

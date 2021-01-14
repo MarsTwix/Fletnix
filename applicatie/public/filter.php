@@ -28,7 +28,7 @@
 
 <!doctype html>
 
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - Filteren</title>

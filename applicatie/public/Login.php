@@ -53,7 +53,7 @@ if (empty($_POST['Inloggen'])) {
 
 <!doctype html>
 
-<html>
+<html lang="nl">
 
 <head>
     <title>Fletnix - Login</title>

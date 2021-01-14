@@ -26,7 +26,10 @@ echo $html;
 // Of in één keer
 echo filmsNaarHTML(haalAlleFilmsOp());
 ?>
-<html>
+
+<!DOCTYPE html>
+
+<html lang="nl">
   <!-- Of inline -->
   <body>
     <?=filmsNaarHTML(haalAlleFilmsOp())?>
