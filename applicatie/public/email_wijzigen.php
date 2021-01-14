@@ -25,6 +25,8 @@ $html = "<h3>mail ingevoerd</h3>";
         }
     }
 
+    $customer = getCustomerData($_SESSION['email']);
+
 ?>
 
 <!doctype html>
@@ -45,7 +47,10 @@ $html = "<h3>mail ingevoerd</h3>";
     </nav>
 
     <h2 class="centertext">Email wijzigen</h2>
-
+    <br>
+    <div class="centertext">
+    <?="<h2>Huidig E-mail address: <br> {$customer['customer_mail_address']}</h2>"?>
+</div>
 <div class="accountForm">
         <form action="email_wijzigen.php" method="post">
         <input name="newMail" type="text" placeholder="Email">
