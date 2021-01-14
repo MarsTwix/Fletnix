@@ -38,9 +38,6 @@
             </div>
             <div class="centertext link">
             <a class="buttonlink" href="Wachtwoord_wijzigen.php" >Wachtwoord wijzigen</a>
-            <form action="LogUit.php">
-            <input type="submit" class="buttonLogOut" value ='Log uit'>
-            </form>
         </div>
         <div class="centertext link">
             <a class="buttonlink" href="uitschrijven.php?" >Uitschrijven</a>
