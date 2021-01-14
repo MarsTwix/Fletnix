@@ -11,6 +11,7 @@
     }
 
     $customer = getCustomerData($_SESSION['email']);
+    //TODO als je op een uitgeschreven account komt ga je hier heen en kan je opnieuw inschrijven en anders kan je uitschrijven.
 ?>
 
 <!doctype html>
@@ -40,6 +41,9 @@
             <form action="LogUit.php">
             <input type="submit" class="buttonLogOut" value ='Log uit'>
             </form>
+        </div>
+        <div class="centertext link">
+            <a class="buttonlink" href="uitschrijven.php?" >Uitschrijven</a>
         </div>
 
     </main>

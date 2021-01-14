@@ -33,14 +33,9 @@ if (empty($email) || empty($password)) {
             $_SESSION['EndDate'] = getSubscibDate($email);
 
             if (!empty($_SESSION['EndDate'])) {
-                $_SESSION['ValidDate'] = checkSubscriptionDate($_SESSION['EndDate']);
-            } elseif (empty($_SESSION['EndDate'])) {
-                $_SESSION['ValidDate'] = true;
-            } else {
-                $_SESSION['ValidDate'] = false;
-            }
-
-            header("Location: filmoverzicht.php");
+            } else{
+                header("Location: filmoverzicht.php");
+            } 
         } else {
             $error = "Wachtwoord incorrect";
         }

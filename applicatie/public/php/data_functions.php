@@ -109,8 +109,6 @@ function addUser($email, $password, $firstname, $lastname, $type, $card, $cardNu
     $query = $dbh->prepare($sql);
 
     $query->execute(array(":email" => $email, ':password' => $password, ':firstname' => $firstname, ':lastname' => $lastname, ':type' => $type, ':card' => $card, ':cardNumber' => $cardNumber, 'country' => $country, ':gender' => $gender));
-
-    return;
 }
 
 function alterUserData($item, $email, $newItem) {
@@ -121,8 +119,6 @@ function alterUserData($item, $email, $newItem) {
     $query = $dbh->prepare($sql);
 
     $query->execute(array(":email" => $email, ":newItem" => $newItem));
-
-    return;
 }
 
 function getAllData($table){
@@ -233,7 +229,7 @@ function getAllPassword() {
     $returnvalue = $query->fetchAll();
 
     if (empty($returnvalue)) {
-        return null;
+        return;
     } else {
         return $returnvalue;
     }
@@ -249,8 +245,6 @@ function hashDatabasePW($email, $password) {
     $query = $dbh->prepare($sql);
 
     $query->execute(array(":email" => $email, ":newItem" => $newPassword));
-
-    return;
 }
 
 function getMovieID($name){
@@ -310,4 +304,28 @@ function getCastsRoles($id){
         $roles[] = $role[0];
     }
     return $roles;
+}
+
+function uitschrijven($email){
+    global $dbh;
+
+    $sql = "UPDATE Customer SET subscription_end = GETDATE() where customer_mail_address = :email";
+
+    $query = $dbh->prepare($sql);
+
+    $query->execute(array(":email" => $email));
+}
+
+function getTopMovies(){
+    global $dbh;
+    $query = $dbh->query("SELECT top(24) movie_id, count(customer_mail_address) as Watched FROM Watchhistory group by movie_id order by Watched desc");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    return $data;
+}
+
+function getGenreTop($genre){
+    global $dbh;
+    $query = $dbh->query("SELECT top(24) movie_id, count(customer_mail_address) as Watched FROM Watchhistory Where movie_id in (select movie_id from Movie_Genre where genre_name = $genre) group by movie_id order by Watched desc");
+    $data = $query->fetchAll(PDO::FETCH_NUM);
+    return $data;
 }
