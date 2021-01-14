@@ -1,7 +1,8 @@
 <?php
     require_once 'php/data_functions.php';
     require_once 'php/view_functions.php';
-    
+    session_start();
+
     if(isset($_SESSION['Login'])) {
         if(!$_SESSION['Login']) {
             header("Location: Login.php");
